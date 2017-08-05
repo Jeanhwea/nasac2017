@@ -1,0 +1,42 @@
+\tableofcontents
+%
+\mainmatter              % start of the contributions
+%
+\title{Solving Project Management Problem with Paralleled Evolutionary Algorithm}
+%
+\titlerunning{Project Management}  % abbreviated title (for running head)
+%                                     also used for the TOC unless
+%                                     \toctitle is used
+%
+\author{Jian Ren\inst{1} \and Jinghui Hu\inst{2} \and Xu Wang}
+%
+\authorrunning{Jian Ren et al.} % abbreviated author list (for running head)
+%
+%%%% list of authors for the TOC (use if author list has to be modified)
+\tocauthor{Jian Ren, Jinghui Hu, Xu Wang}
+%
+\institute{Beihang University, Beijing 100191, China\\
+\email{\{renjian, hujinghui, bhwangxu\}@buaa.edu.cn}
+}
+
+\maketitle
+
+\begin{abstract}
+In this paper, we focus on software project managers’ needs for
+software project planning. Firstly, we briefly introduce
+the background and current state of Software Project Management Problem (SPMP).
+The software project management problem mainly includes resources allocation
+and work packages scheduling. Our goal is to minimize the overall duration of a software
+project, while satisfying the dependencies between work packages and constraints of resources
+allocation in the software project. Finding an optimal solution for above-mentioned software
+project problem is NP-hard. We learn from search based software engineering approach to
+analyze and solve software project management problem. We implement both sequential and
+parallel version applications, which are aim to solve the software project management
+problem. The sequential version application is based on common programming approach using
+C++ programming language, and the parallel version application is based on GPGPU programming
+approach using CUDA C++ API. We redesign search based evolutionary algorithm to cater for our
+purpose of parallel programming on GPU. Finally, we conduct a comparison experiment to verify
+the parallel evolutionary algorithm does improve computational efficiency and evolutionary
+algorithm always converge to nearly optimal solutions. 
+\keywords{Software project management, Evolutionary algorithm, Paralleled Optimization Problem}
+\end{abstract}
