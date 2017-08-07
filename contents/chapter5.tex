@@ -11,6 +11,7 @@ RQ2: Does the evolutionary algorithm effectively optimize project management
 issues?
 
 \subsection{Experimental Data}
+%
 The experimental data evaluated in this paper are examples of real industrial 
 project management. There are three software project plannings, which are 
 named as A-Input, B-DBUpgrade and C-SmartPrice, where A-Input is the medium-
@@ -23,6 +24,7 @@ internal project planning\cite{ren}. Data related statistics show in Table 1.
 %table 1
 
 \subsection{Evaluation Experimeent for Algorithm Efficiency}
+%
 In order to answer RQ1, this section achieves the efficiency comparison test 
 between the parallel evolution algorithm and serial evolution algorithm. The 
 hardware environment of this experiment is as follows: the runtime 
@@ -34,5 +36,64 @@ environment of this experiment is: Window 7 Ultimate Service Pack 1,
 Microsoft Visual Studio 2012 C ++ Compiler, CUDA 7.0.28 Runtime compilation 
 environment. The specific hardware configuration is shown in Table 2.
 %table 2
+
+This experiment uses the above three items as input to evaluate the 
+performance comparison of the parallel evolutionary algorithm and the 
+serialization evolution algorithm. The specific code actually completed the 
+preparation of two versions of the project management algorithm, the serial 
+version is written in C ++ language and parallel version is written using CUDA
+-C ++ language. It is used to verify the difference between the parallel 
+evolutionary algorithm and the serialization evolution algorithm in project 
+management problem by the code design experiment of the two versions.
+
+The initial configuration of the two versions of the evolutionary algorithm 
+is the same. The number of populations is 1000, and the number of iterations 
+is 100. Each iteration process includes crossover, mutation and selection. 
+Each time the iteration process sets the timer at the beginning of an 
+evolutionary algorithm to counts 100 iterations, and then stops the timer 
+after 100 iterations. This allows us to count the total computational time of 
+the project problem in the serial CPU environment and the parallel GPU 
+environment, using this time as the evaluation criteria.
+%figure 9
+%figure10
+%figure11
+
+The 10 time-consuming charts for Project A, Project B, and Project C are 
+shown in Figures 9, 10 and 11. It can be seen from the figures that the time-
+consuming on the CPU algorithm is roughly twice as long as the GPU algorithm. 
+At the same time, the advantage of using the GPU algorithm in the calculation 
+of project management problems is that we can make better use of system 
+resources. So it can be a good answer to RQ1 that parallel evolution 
+algorithm can effectively improve the efficiency of computing in the project 
+management issues.
+
+\subsection{Validastion Experiment for Algorithm}
+%
+In order to answer RQ2, this section designs the validation experiment for 
+evolutionary algorithm. The basic configuration used in the effectiveness 
+evaluation experiment is that the number of individuals is 100 and the number 
+of iterations of the evolution algorithm is 100. For each computational 
+process of the evolutionary algorithm, we count the fitness for each 
+generations of the population, and then plot the discrete fitness results 
+into a box graph.
+
+Each generation of the graph shows the five eigenvalues of all individual 
+fitness in the population: the minimum, the next quartile, the median, the 
+upper quartile and the maximum. We draw the box graphs which is corresponding 
+to the calculation results of the values for each generation of the three 
+project inputted, which show Figure 12, Figure 13 and Figure 14. From the 
+trend of three projects, it can be seen that the population is more 
+diversified when the population is initialized, and the span of the box is 
+larger as the number of iterations increases. The population evolves toward 
+the better result, At the same time the overall suitability begins to 
+decrease, and finally the approximation converges to a superior result.
+
+Through the above analysis results of experimental data, we can accurately 
+answer RQ2. In the project management issues, the evolutionary algorithm does 
+have a good space of optimization and improment.
+%figure12
+%figure13
+%figure14
+
 
 
