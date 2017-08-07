@@ -1,4 +1,85 @@
 
 \section{Introducition to Evolution Algorithm}
+\subsection{Meta-heuristic Algorithms}
+%
 
-text
+In the process of computer science development, the program algorithm design 
+provides much power to advance the advancement of computer science and 
+technology. We know that in solving the same kind of problem, the 
+computational efficiency of different algorithms is completely different. 
+Algorithm has become the soul of the computer to solve practical problems. In 
+addition to the current algorithm that can be used to calculate a problem at 
+a given time, a class of algorithms is found that no performance guarantee 
+can be given theoretically at present, but in practice it is often possible 
+to give the solution of the problem efficiently. This algorithm is called meta
+-heuristic algorithm.   
+
+Unlike the usual algorithmic algorithm, the meta-heuristic algorithm tries to 
+provide one or more goals in a single calculation, and the corresponding 
+optimal solution can be found in the run. The heuristic algorithm can often 
+find a good solution, but there is no way to prove that it won’t get a worse 
+solution, and even sometimes cannot find solution. The evolutionary algorithm 
+used in this paper usually gives an approximate optimal answer within a given 
+time, but there is usually no way to ensure that a sufficient solution is 
+given at a given time.
+
+In reality, there are some extreme cases in the process of implementing the 
+heuristic algorithm, that is, some solutions of the meta-heuristic algorithms 
+are difficult to find, or they cannot be found at all. The heuristic 
+algorithm is often used to solve some Non-Deterministic Polynomial complete 
+problems because the theoretical Non-Deterministic Polynomial complete 
+problem is computationally large and cannot use some deterministic algorithms 
+to find the optimal solution. However, the meta-heuristic algorithm can get a 
+good answer in a reasonable time when dealing with such Non-Deterministic 
+Polynomial complete problem, so the meta-heuristic algorithm is also a hot 
+field of academic research.
+
+The idea of the meta-heuristic algorithm has been around for a long time, and 
+since its formation, the research on it has not been interrupted, and there 
+are many ways to achieve it now. In recent decades, the research of meta-
+heuristic algorithm has developed rapidly, and there have been many more 
+mature and specific algorithms. In the 1970s, Professor Holland proposed 
+genetic algorithm\cite{holland} (Genetic Algorithm). Genetic algorithm 
+simulates the evolutionary method of biological population to find the 
+optimal solution of some problems, which opens up a new round of research on 
+meta - heuristic algorithm. In the 1980s, a number of new generation 
+heuristic algorithms emerged, such as Simulated Annealing Algorithm, 
+Artificial Neural Network, Tabu Search. Now, the relatively hot heuristic 
+algorithms are Evolutionary Algorithm, Ant Algorithms, Genetic Quantum 
+Algorithm. The research of meta-heuristic algorithms has been thinking about 
+a new and highly developed\cite{harman}.
+
+\subsection{Evolutionary Algorithm}
+%
+
+Evolutionary algorithm draws on Darwin's theory of evolution and Mendel's 
+theory of genetic genetics. Its essence is an efficient global search 
+algorithm that imitates the biological evolution of nature. It can 
+automatically acquire and accumulate the knowledge of the huge search space 
+in the process of searching for the optimal solution automatically, and adapt 
+to controlling search process by itself. It can be directional to obtain the 
+convergence of the better solution according to the natural law of the 
+superior is better, the stronger the stronger\cite{deb}.
+
+Figure 1 summarizes the basic process of the evolutionary algorithm. The core 
+of the evolutionary algorithm is the design of the solution coding from and 
+the fitness evaluation function. The evolutionary algorithm first code the 
+form of the solution according to the different problem requirements, and 
+then each individual in the population represents a solution to the problem. 
+At the same time, for each problem, we also need to evaluate the fitness 
+evaluation function of the solution. The fitness value of different solutions 
+is used to measure the adaptability of an individual. Individuals with high 
+adaptability are more likely to survive in the evolution of the population. 
+The operation of the evolutionary algorithm has initialized population, 
+crossover, mutation, selection. The initial population refers to the random 
+generation of the first generation of population; the cross is a process of 
+the individual hybridization between parents and the production of new 
+offspring population; mutation is a process of the certain genes to be 
+mutated in the individual, mutated individuals involved in population 
+hybridization to maintain the species diversity of the population, and also 
+will get some new solutions; choice is to choose each individual population, 
+according to the natural law of the survival the fittest that is used to 
+eliminate the inferior individual. The evolutionary algorithm finally obtains 
+the optimal solution we want to by the evolution of the population.
+
+

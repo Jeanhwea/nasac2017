@@ -1,3 +1,124 @@
-\section{Project Management Problem}
+% chapter3: 项目管理问题
 
-text
+\section{Project Management Problem}
+%
+
+\subsection{Background}
+%
+
+The core of project management issues is work package scheduling and
+resource allocation.
+
+
+FIGURE 2 is a typical software project management Gantt chart, which
+illustrats work package arrangement of a real industry software
+engineering.  Generally, all the important phase in software
+engineering, such as project planning, requirements analysis,
+programming and testing, and project deployment, are inseparable from
+the allocation of work packages.  These work packages have a mutually
+restrictive relationship.  Some work packages must be started when
+other work packages are completed.  For instance, the analysis of
+software requirements is often to take place after the project
+planning is completed.  Some work packages can be done at the same
+time, and there is no impact on each other, such as software
+development and software testing can often be synchronized.  The goal
+of project manager is using the shortest duration to complete each
+work package for the software project.
+
+
+\subsection{Definition}
+%
+The goal of this paper is to find an optimal solution or near optimal
+optimal solution for the project management problem described as
+follows:
+
+\emph{
+  For a software project of $N$ work packages and $M$ kinds of
+  resources, there is a corresponding dependency between these work
+  packages, and each resource can only be assigned to the specified
+  work package.  It is necessary to arrange the order of the work
+  package reasonably and make the overall construction period as short
+  as possible under the condition of satisfying the work package
+  dependency and the resource allocation restriction.
+}
+
+
+\subsection{Assumptions}
+%
+There threre assumptions for our project management problem.
+
+\emph{Assumption I}: The software project plan can be decomposed into
+a set of work packages containing $N$ elements $T = \{t_1, t_2, ...,
+t_N \}$.  Each work package in set $T$ is an indivisible (ie, The work
+package can not be split to other work package for the schedule), the
+set of work packages have a pre-estimated workload, the workload of
+the composition of the collection $E = \{e_1, e_2, ..., e_N \}$.  The
+function $TE: T \rightarrow E$, for a given work package $t_i$,
+produces an estimated workload $e_i = TE(t_i)$ for a work package
+$t_i$, where $e_i$ is the estimated workload of $t_i$.
+
+
+\emph{Assumption II}: The work packages in the software project plan
+can be processed with $M$ kinds of resources, which constitute a
+resource set $R = \{r_1, r_2, ..., r_M \}$, for each project's work
+package set $T$ and the resource set $R$, There exsits a function
+$TR: T \times R \rightarrow \{0, 1\}$, for the given work package $t_i$
+and the resource $r_j$, $TR(t_i, t_j) = 1$ means the resource $r_j$ can
+be allocated to the work package $t_i$, while $TR (t_i, r_j) = 0$ means
+can not.
+
+
+\emph{Assumption III}: All work packages in the work package of the
+software project plan have dependencies.  These dependencies form a set
+$Dep= \{t_i \rightarrow t_j \mid t_i, t_j \in T, t_j \text{ depends on } t_i\}$.
+As the assumption of this paper, $t_i \rightarrow t_j$ means that
+$t_j$ depends on $t_i$, that is the work package $t_j$ must be
+arranged after the work package $t_i$, and satisfy the formula
+$t_j.start \leq t_i.end$ (where $t.start$ and $t.end$ Respectively
+indicate the start time and the end time of the work package $t$).
+And assume that there is no direct or indirect "loop" dependency
+between work packages.
+
+
+\subsection{The Object of Problem}
+%
+The object of project management is to find a optimal work package sequence
+under the three assumptions below.
+
+The notation of work package sequence(WPS) is as follows:
+
+\begin{equation}
+  S = \{
+  (t_{p_1}, r_{q_1}) ... \rightarrow (t_{p_j}, r_{q_j}) \rightarrow ... (t_{p_N}, r_{q_N})
+  \mid t_{p_i} \in T, r_{q_j} \in R
+  \}
+\end{equation}
+
+where every $(t_p, r_q)$ means resource $r_q$ is allocated to work package $t_p$.
+The WPS needs to meet the following two restrictions:
+
+\begin{enumerate}
+\item $\nexists i < j, t_j \rightarrow t_i \in Dep$.
+  (The WPS must satisfy dependencies)
+\item $\nexists i, k, TR(t_i, r_k) = 0$.
+  (All work packages must have at least one resource)
+\end{enumerate}
+
+For the work package arrangement sequence S, each work package $t$ is
+given $t.start$ (the start time) and $t.end$ (the end time).  The
+total cost duration function of the project is defined as following:
+
+\begin{equation}
+f(S) = max\{t.end \mid t \in T\}
+\end{equation}
+
+that is, the total duration f represents the maximum value of the end
+time of all work packages in a work package arrangement sequence $S$,
+which means when the last work package for the project is completed,
+the entire project ends.
+
+The objective of the project management problem is to find a work
+package sequence $S$ to arrange the whole project under the condition
+of satisfying the restriction of dependencies and resources, so that
+the total duration is minimized.
+

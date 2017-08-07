@@ -1,3 +1,38 @@
 \section{Evaluation}
 %
-text
+For the validity assessment of the evolutionary algorithm proposed in this 
+paper, this paper makes separate evaluation experiments for the efficiency of 
+parallel evolutionary algorithm and the validity of evolutionary algorithm in 
+project management problem. The purpose of the experiment is to answer the 
+following two questions:
+RQ1: Is the parallel evolution algorithm able to improve the efficiency of 
+the schedule?
+RQ2: Does the evolutionary algorithm effectively optimize project management 
+issues?
+
+\subsection{Experimental Data}
+The experimental data evaluated in this paper are examples of real industrial 
+project management. There are three software project plannings, which are 
+named as A-Input, B-DBUpgrade and C-SmartPrice, where A-Input is the medium-
+scale project planning of the simulation structure; B-DBUpgrade is the 
+project plan of the Oracle’s database upgrade. The goal is to upgrade the 
+Oracle database from the 9g version to the 10g version, which is Oracle's non-
+public version of the project planning; C-SmartPrice is a medium-sized supply 
+chain upgrade project planning, at the same time is a non-public Of the 
+internal project planning\cite{ren}. Data related statistics show in Table 1.
+%table 1
+
+\subsection{Evaluation Experimeent for Algorithm Efficiency}
+In order to answer RQ1, this section achieves the efficiency comparison test 
+between the parallel evolution algorithm and serial evolution algorithm. The 
+hardware environment of this experiment is as follows: the runtime 
+environment that execute the serial evolution algorithm is the Intel i7 
+series central processing unit (CPU). The runtime environment of the parallel 
+evolution algorithm is the NVidia GeForce series graphics processing unit (GPU
+). CPU and GPU detailed configuration comparison see Table 6.1. The software 
+environment of this experiment is: Window 7 Ultimate Service Pack 1, 
+Microsoft Visual Studio 2012 C ++ Compiler, CUDA 7.0.28 Runtime compilation 
+environment. The specific hardware configuration is shown in Table 2.
+%table 2
+
+
