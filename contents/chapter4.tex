@@ -1,49 +1,55 @@
 \section{Algotithm Design}
+
 \subsection{Algotithm Summay}
 %
-
-For the project management issues given above, this paper uses the 
-evolutionary algorithm to solve. Two important steps in using the 
-evolutionary algorithm are to encode the problem solution and to choose the 
-appropriate fitness evaluation function. Figure 6 shows the process of 
-allocating resources to all the work packages in a project by simulation. 
-First, the work package after decomposition of the project WBS is 
-preprocessed to get the corresponding work package priority sequence, and 
-then according to the dependency of the work package and the limit of 
-resource allocation to schedule the progress of each work package, and 
-finally to calculate the total duration of the simulation.
+For the project management issues given above, this paper uses the
+evolutionary algorithm to solve. Two important steps in using the
+evolutionary algorithm are to encode the problem solution and to
+choose the appropriate fitness evaluation function. Figure 6 shows the
+process of allocating resources to all the work packages in a project
+by simulation.  First, the work package after decomposition of the
+project WBS is preprocessed to get the corresponding work package
+priority sequence, and then according to the dependency of the work
+package and the limit of resource allocation to schedule the progress
+of each work package, and finally to calculate the total duration of
+the simulation.
 %this is a figure
+
 \subsection{The Form of Solution}
 %
+For the above-mentioned process of problem solving, we must first
+determine the form of solution. This article uses Work Package
+Priority (hereinafter referred to as WPP) to represent a solution of
+project management issues. The form of such a solution is actually an
+arrangement of the work packages in all the items, and the solution
+space for the items containing the N work packages contains N
+solutions, which is a very large search space.
 
-For the above-mentioned process of problem solving, we must first determine 
-the form of solution. This article uses Work Package Priority (hereinafter 
-referred to as WPP) to represent a solution of project management issues. The 
-form of such a solution is actually an arrangement of the work packages in 
-all the items, and the solution space for the items containing the N work 
-packages contains N solutions, which is a very large search space.
 %This is a figure 7
 
-Figure 7 shows a specific solution, the solution of the coding that 
-represents the work package sequence gives the priority ranking of the work 
-package arrangement T1, T5, T6, T4, T8, T3, T9, T2, T7. This coding method is 
-conducive to programming and can be a favorable means for the selection of 
-the optimal solution.
+Figure 7 shows a specific solution, the solution of the coding that
+represents the work package sequence gives the priority ranking of the
+work package arrangement T1, T5, T6, T4, T8, T3, T9, T2, T7. This
+coding method is conducive to programming and can be a favorable means
+for the selection of the optimal solution.
+
+
 \subsection{Fitness Assessment}
 %
+Through the form of the above coding about solution, each individual
+coding form is a WPP. We get a work package sequence called S by
+simulating the assignment of the work package sequence which is to
+simulate the corresponding resource of the WPP. Then calculate the
+total duration corresponding to the sequence of the work package. The
+value of the total duration is used as evaluation to the individual in
+the population.
 
-Through the form of the above coding about solution, each individual coding’s 
-form is a WPP. We get a work package sequence called S by simulating the 
-assignment of the work package sequence which is to simulate the 
-corresponding resource of the WPP. Then calculate the total duration 
-corresponding to the sequence of the work package. The value of the total 
-duration is used as evaluation to the individual in the population.
-
-For the solution of the total duration that is corresponding to a WPP is as 
-follows, first according to the types of resources that the various work 
-packages need to allocate in the resource diagram and the workload of each 
-work package, it will execute allocation of resources for the priority of 
-each individual work package coding. After the allocation, each work package 
-will have the start time and end time. Then the maximum execution time for 
-all work packages is the total duration of the project.
+For the solution of the total duration that is corresponding to a WPP
+is as follows, first according to the types of resources that the
+various work packages need to allocate in the resource diagram and the
+workload of each work package, it will execute allocation of resources
+for the priority of each individual work package coding. After the
+allocation, each work package will have the start time and end
+time. Then the maximum execution time for all work packages is the
+total duration of the project.
 
