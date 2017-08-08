@@ -1,66 +1,110 @@
 %% chapter 1
 
-\section{Related Works}
+\section{Introduction}
+
+\subsection{Background}
+% todo
+In the production and life, each of us will come into contact with all kinds of
+production tasks. for these large or small production tasks, how to properly
+deploy the task is a hot issue to be solved urgently. For example, in a car
+production line, the production manager needs to split a project that produces a
+car into several sub-tasks or more elaborate work package and then deliver the
+work package to each machine that carries different machining task. Not only in
+the automobile production process so, software project management is also
+according to the law. We know that in an actual development process of software
+project, the project manager's responsibility is to properly schedule the tasks
+of software project development, supervise the programming work of the software
+engineer and arrange the development progress of the software to ensure that the
+software can be delivered before the scheduled time \cite{stellman}. Therefore,
+the project management problem is a very basic problem in software engineering,
+but also is a most difficult problem in the actual work for the project manager.
+
+
+Through the actual research of production practice, we can draw out that the
+different task management schemes designed by the project manager, such as the
+arrangement order of the different work packages in a project, or the different
+resource allocation in the same human resources team and the rationality of the
+members of the team, will have a great impact on the overall duration of a
+project. Excellent project managers can shorten the overall duration of a
+software project by allocating the order of execution of a task reasonably, or
+make full use of the resources of the team and allocate human resources
+rationally to maximize the overall profit for project. However, before the start
+of a software project, company's project management staff, often need to spend a
+lot of time to discuss what kind of difficulties faced in the software project
+development process, and to discuss several times to make the allocation plan of
+work packages such as Demand analysis, system design, system development, system
+testing and etc.  At present, the industry is faced with a lack of automatic
+method to properly arrange the entire project work package, which is not only
+the problem that project manager faced in the actual work process, but also the
+challenges what industry focus on solving. Therefore, it is necessary to design
+a tool that can help the project manager manage the work packages.
+
+
+Software Project Management is an art of people management and task scheduling
+in software engineering. It requires an overall understanding of the lifecycle
+of software development, such as planning tasks, staff organization and so
+on. The main research point of this paper is to solve the problem of software
+project management by using the search-based approach, which is an important
+component of Search Based Software Engineering (SBSE) and it is also a future
+development trend of software engineering project management under the big data
+age.
+
+\subsection{Related Works}
 %
+In 1993, Chang first proposed the project management problem. The view of Chang
+is that software project management net(SPM-Net) can be used to schedule tasks
+and manage the resources of software development \cite{chang}. In his article,
+Chang's project management problem is based on the simulated data, the reason
+leading to this is the real industrial data of software project management is
+very scanty. In 2002, Aguilar-Ruiz et al. made a further research on simulated
+software project data and bring search-based method to solve project management
+problem \cite{alba}. They proposed simulation arrangement for the work package
+to provide a plan that project managers can follow to arrange each tasks. Like
+Chang, Aguilar-Ruiz's work is also based on simulative data. In 2007, Alba and
+Chicano optimized the search algorithms for project management, and solve the
+project management problem using genetic algorithm. They goal is using a
+search-based approach to reduce the final completion period of a project. In
+2009, Ren first applied co-evolutionary algorithms to project management problem
+\cite{ren}. At present, the search space of the work package based on the
+project management is more and more huge, the sequential algorithm is not so
+effective to solve such problems. Thus, Finding a parallel algorithm solution is
+has become a hot topic on research \cite{pentico}.
 
-In 1993, Chang, C proposed the problem of project management. The view of 
-Chang is that Software Project Management Net can be used to schedule tasks 
-and manage the resources of software development. In his article, Chang's 
-problem of project management is based on the industrial data which is 
-simulated by computer, the reason leading to this is the real industrial data 
-of software project management is very scanty. Then in 2002, Aguilar-Ruiz 
-used simulative software project data to further research and put forward the 
-project management method based on search. Their method put forward an 
-approach of simulation to arrange the work package to provide a plan that 
-project managers can follow to arrange the tasks\cite{alba}. Like Chang, 
-Aguilar-Ruiz is also based on simulative data to evaluate their experimental
-results. In 2007, Alba and Chicano optimized the corresponding search algorithms
-for project management, and proposed the use of Genetic Algorithm to solve the 
-problem of project management, using a search-based approach to reduce the 
-final completion period of a project. In 2009, Ren proposed the use of 
-coevolutionary algorithms to solve project management issues\cite{ren}. At 
-present, the search space of the work package based on the project management
-is more and more huge, the traditional serial solution to solve such problems
-has been unable to meet people's requirements for the speed of the calculation. 
-Thus, the solution to the parallel method of such problems has become a hot 
-topic of research\cite{pentico}.
+In recent years, search-based project management has become an important branch
+of search-based software engineering, which has become a new field of
+research. At the same time, the number of papers related to search-based project
+management issues is also rising, which makes many researchers willing to engage
+in search-based project management issues, and also provide a new platform for
+practice and innovation of for the search-based project management issues
+\cite{penta}.
 
-In recent years, search-based project management has become an important 
-branch of Search Based Software Engineering, which has become a new field of 
-research. At the same time, the number of papers related to search-based 
-project management issues is also rising, which makes many researchers 
-willing to engage in search-based project management issues, and also provide 
-a new platform for practice and innovation of for the search-based project 
-management issues\cite{penta}.
+Because the search-based method is a computationally intensive method, the
+computer's CPU computing resources are usually consumed very much. Therefore,
+the traditional serial computing model cannot meet the requirement of
+calculating the speed that satisfy the method based on the search. In 2007, Alba
+and Chicano began using search-based methods to improve the optimal solution for
+finding problems, and for the first time using a parallel code implementation to
+test the efficiency of using search-based methods \cite{pospichal}.  In recent
+years, more search-based software engineering methods (such as simulated
+annealing, climbing algorithms, evolutionary algorithms, tabu search, etc.) have
+been used to solve project management problems, and these methods are usually
+able to get good convergence solution on project management issues.
 
-Because the search-based method is a computationally intensive method, the 
-computer's CPU computing resources are usually consumed very much. Therefore, 
-the traditional serial computing model cannot meet the requirement of 
-calculating the speed that satisfy the method based on the search. In 2007, 
-Alba and Chicano began using search-based methods to improve the optimal 
-solution for finding problems, and for the first time using a parallel code 
-implementation to test the efficiency of using search-based methods\cite{pospichal}.
-In recent years, more search-based software engineering methods (such as 
-simulated annealing, climbing algorithms, evolutionary algorithms, tabu 
-search, etc.) have been used to solve project management problems, and these 
-methods are usually able to get good convergence solution on project 
-management issues.
-
-At present, for the definition and solution of the project management 
-problem, scholars usually establish the relevant mathematical model in the 
-process of research, and then carry out research and optimization in their 
-own model. In general, these mathematical models are not developed into a 
-common tool, so it is difficult to apply to the actual production process of 
-the project manager. In 2012, Stylianou and Gerasimou first developed a tool 
-for project management, which they named IntelliSPM\cite{stylianou}. This is
-a tool that uses Matlab and Java programming to support software project
-management, which supports staffing arrangement and resource allocation
-optimization. Stylianou uses the fitness evaluation function to control the
-dependencies between work packages, so this often does not completely solve
-the dependency of the work package. Stylianou did not disclose this tool.
-At present, in engineering practice, the project management is still lack of
-tool support. Facing the growing needs of automate the scheduling of tools
-which are needed by software project managers, developing a software project
-management tool that supports project manager decision making has become a
-new goal in the field of search project management.
+At present, for the definition and solution of the project management problem,
+scholars usually establish the relevant mathematical model in the process of
+research, and then carry out research and optimization in their own model. In
+general, these mathematical models are not developed into a common tool, so it
+is difficult to apply to the actual production process of the project
+manager. In 2012, Stylianou and Gerasimou first developed a tool for project
+management, which they named IntelliSPM\cite{stylianou}. This is a tool that
+uses Matlab and Java programming to support software project management, which
+supports staffing arrangement and resource allocation optimization. Stylianou
+uses the fitness evaluation function to control the dependencies between work
+packages, so this often does not completely solve the dependency of the work
+package. Stylianou did not disclose this tool.  At present, in engineering
+practice, the project management is still lack of tool support. Facing the
+growing needs of automate the scheduling of tools which are needed by software
+project managers, developing a software project management tool that supports
+project manager decision making has become a new goal in the field of search
+project management.
 
