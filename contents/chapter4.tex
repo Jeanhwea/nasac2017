@@ -1,58 +1,67 @@
-% chapter 4
-
-\section{Algotithm Design}
-
-\subsection{Algotithm Summay}
 %
-For the project management problem given above, this paper uses the
-evolutionary algorithm to solve. Two important steps in using the
-evolutionary algorithm are to encode the problem solution and to
-choose the appropriate fitness evaluation function. Figure 6 shows the
-process of allocating resources to all the work packages in a project
-by simulation.  First, the work package after decomposition of the
-project WBS is preprocessed to get the corresponding work package
-priority sequence, and then according to the dependency of the work
-package and the limit of resource allocation to schedule the progress
-of each work package, and finally to calculate the total duration of
-the simulation.
-%this is a figure
-
-\subsection{The Form of Solution}
+% ---------- chapter 4 ----------
 %
-For the above-mentioned process of problem solving, we must first
-determine the form of solution. This article uses Work Package
-Priority (hereinafter referred to as WPP) to represent a solution of
-project management problem. The form of such a solution is actually an
-arrangement of the work packages in all the items, and the solution
-space for the items containing the N work packages contains N
-solutions, which is a very large search space.
+
+\section{Description and Design of Algorithm}
+
+\subsection{Summary}
+%
+This paper aims to solve above-mentioned project management problem by using
+evolutionary algorithm.
+
+% this is a figure 6
+
+There are two important steps in using the evolutionary algorithm. One is to
+choose the representation of the problem's solution, the other is to define a
+appropriate fitness function. In the process of project management, the work
+packages in the project is allocated by simulation. See figure 6, Firstly, the
+whole project is decomposed into several work packages by \emph{work breakdown
+  structure}, and those work packages is arranged into a corresponding
+\emph{work package sequence}. Secondly, according to the dependencies of the
+work packages and the restriction of resource, each kinds of resources is
+allocated to the corresponding work package by \emph{first-come-first-served}
+(FCFS) algorithm. Finally, the project's overall duration is calculate by
+simulation.
+
+
+\subsection{The Representation of Solution}
+%
+For the above-mentioned problem, the representation of solution is defined as
+follows.
+
+
+This paper uses \emph{work package sequence} (hereinafter referred to as \emph{WPS}) to
+represent a solution of project management problem. The representation of such a
+solution is actually an priority arrangement sequence of the work packages in
+the whole project, and the number of solutions for a project containing the $N$
+work packages is $N!$, which is large enough to do random search.
 
 %This is a figure 7
+\begin{equation}
+  T_1 \rightarrow T_5 \rightarrow T_6 \rightarrow T_4 \rightarrow T_8
+  \rightarrow T_3 \rightarrow T_9 \rightarrow T_2 \rightarrow T_7
+  \label{repr}
+\end{equation}
 
-Figure 7 shows a specific solution, the solution of the coding that
-represents the work package sequence gives the priority ranking of the
-work package arrangement $T_1$, $T_5$, $T_6$, $T_4$, $T_8$, $T_3$,
-$T_9$, $T_2$, $T_7$. This coding method is conducive to programming
-and can be a favorable means for the selection of the optimal
-solution.
+For example, equation (\ref{repr}) is solution, the solution represents the work
+package sequence in the priority of $T_1$, $T_5$, $T_6$, $T_4$, $T_8$, $T_3$,
+$T_9$, $T_2$, $T_7$, while arranging the work packages. This representation is
+beneficial to programming and intuitive.
 
 
-\subsection{Fitness Assessment}
+\subsection{Fitness Function}
 %
-Through the form of the above coding about solution, each individual
-coding form is a WPP. We get a work package sequence called S by
-simulating the assignment of the work package sequence which is to
-simulate the corresponding resource of the WPP. Then calculate the
-total duration corresponding to the sequence of the work package. The
-value of the total duration is used as evaluation to the individual in
-the population.
+The above-mentioned representation of solution make each individual coded as
+\emph{WPS}. The fitness value of \emph{WPS} is the project's overall duration,
+which is calculated by simulating the assignment of work packages in the set of
+package sequence, see equation (\ref{wps}).
 
-For the solution of the total duration that is corresponding to a WPP
-is as follows, first according to the types of resources that the
-various work packages need to allocate in the resource diagram and the
-workload of each work package, it will execute allocation of resources
-for the priority of each individual work package coding. After the
-allocation, each work package will have the start time and end
-time. Then the maximum execution time for all work packages is the
-total duration of the project.
+For each \emph{WPS}, the algorithm to calculate corresponding project overall
+duration is as follows. Firstly, according to first-come-first-served (FCFS)
+rule, the front work packages in a \emph{WPS} has high priority to get
+resources, need to allocate in the resource diagram and the workload of each
+work package, it will execute allocation of resources for the priority of each
+individual work package coding. After the allocation, each work package will
+have the start time and end time. Then the maximum execution time for all work
+packages is the overall duration of the project.
 
