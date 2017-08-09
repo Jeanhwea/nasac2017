@@ -1,4 +1,4 @@
-\section{Evaluation}
+\section{Empirical Study}
 %
 For the validity assessment of the evolutionary algorithm proposed in
 this paper, this paper makes separate evaluation experiments for the
@@ -17,14 +17,14 @@ issues?
 The experimental data evaluated in this paper are examples of real
 industrial project management. There are three software project
 plannings, which are named as \emph{A-Input}, \emph{B-DBUpgrade} and
-\emph{C-SmartPrice}, where \emph{A-Input} is the medium- scale project
+\emph{C-SmartPrice}, where \emph{A-Input} is the medium-scale project
 planning of the simulation structure; \emph{B-DBUpgrade} is the
 project plan of the Oracle database upgrade. The goal is to upgrade
 the Oracle database from the 9g version to the 10g version, which is
-Oracle's non- public version of the project planning;
-\emph{C-SmartPrice} is a medium-sized supply chain upgrade project
-planning, at the same time is a non-public of the internal project
-planning\cite{ren}. Data related statistics show in Table 1.
+Oracle's non-public version of the project planning;
+\emph{C-SmartPrice} is a medium-sized project planning about supply chain upgrade, 
+and like B,it is a non-public of the internal project
+planning\cite{ren}. The related statistics of data show in Table 1.
 
 %table 1
 
@@ -47,15 +47,15 @@ environment. The specific hardware configuration is shown in Table 2.
 
 This experiment uses the above three items as input to evaluate the 
 performance comparison of the parallel evolutionary algorithm and the 
-serialization evolution algorithm. The specific code actually completed the 
-preparation of two versions of the project management algorithm, the serial 
+serial evolution algorithm. The specific work about encoding has actually 
+completed two versions of the project management algorithm, the serial 
 version is written in C++ language and parallel version is written using CUDA
 C++ language. It is used to verify the difference between the parallel 
-evolutionary algorithm and the serialization evolution algorithm in project 
+evolutionary algorithm and the serial evolution algorithm in project 
 management problem by the code design experiment of the two versions.
 
 
-The initial configuration of the two versions of the evolutionary algorithm 
+The initial configuration of the two versions 
 is the same. The number of populations is 1000, and the number of iterations 
 is 100. Each iteration process includes crossover, mutation and selection. 
 Each time the iteration process sets the timer at the beginning of an 
@@ -83,7 +83,7 @@ management issues.
 In order to answer \textbf{RQ2}, this section designs the validation experiment for 
 evolutionary algorithm. The basic configuration used in the effectiveness 
 evaluation experiment is that the number of individuals is 100 and the number 
-of iterations of the evolution algorithm is 100. For each computational 
+of iterations is 100. For each computational 
 process of the evolutionary algorithm, we count the fitness for each 
 generations of the population, and then plot the discrete fitness results 
 into a box graph.
@@ -93,7 +93,7 @@ Each generation of the graph shows the five eigenvalues of all individual
 fitness in the population: the minimum, the next quartile, the median, the 
 upper quartile and the maximum. We draw the box graphs which is corresponding 
 to the calculation results of the values for each generation of the three 
-project inputted, which show Figure 12, Figure 13 and Figure 14. From the 
+project inputted, which show in Figure 12, Figure 13 and Figure 14. From the 
 trend of three projects, it can be seen that the population is more 
 diversified when the population is initialized, and the span of the box is 
 larger as the number of iterations increases. The population evolves toward 
