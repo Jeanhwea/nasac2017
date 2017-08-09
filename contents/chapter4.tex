@@ -12,9 +12,9 @@ evolutionary algorithm.
 There are two important steps in using the evolutionary algorithm. One is to
 choose the representation of the problem's solution, the other is to define a
 appropriate fitness function. In the process of project management, the work
-packages in the project is allocated by simulation. See figure 6, Firstly, the
+packages in the project are allocated by simulation. See figure 6, Firstly, the
 whole project is decomposed into several work packages by \emph{work breakdown
-  structure}, and those work packages is arranged into a corresponding
+  structure}, and those work packages are arranged into a corresponding
 \emph{work package sequence}. Secondly, according to the dependencies of the
 work packages and the restriction of resource, each kinds of resources is
 allocated to the corresponding work package by \emph{first-come-first-served}
@@ -30,7 +30,7 @@ follows.
 
 This paper uses \emph{work package sequence} (hereinafter referred to as \emph{WPS}) to
 represent a solution of project management problem. The representation of such a
-solution is actually an priority arrangement sequence of the work packages in
+solution is actually a priority arrangement sequence of the work packages in
 the whole project, and the number of solutions for a project containing the $N$
 work packages is $N!$, which is large enough to do random search.
 
@@ -56,13 +56,13 @@ package sequence, see equation (\ref{wps}).
 
 For each \emph{WPS}, the algorithm to calculate corresponding project overall
 duration is as follows. Firstly, according to first-come-first-served (FCFS)
-rule, the front work packages in a \emph{WPS} has high priority to get
+rule, the front work packages in a \emph{WPS} have high priority to get
 resources, the back work packages has low priority. Secondly, the $TR$ function
 defines which work package can get which resources, if two work packages that
-requires the same resources, the higher priority one will use the resources
-first, the lower priority one will use the resources after the higher one
+require the same resources, the higher priority one will use the resources
+firstly, the lower priority one will use the resources after the higher one
 releases the resources. Finally, the project's overall duration is the last end
-time after all work packages is allocated the resources (see algorithm
+time after all work packages are allocated the resources (see algorithm
 \ref{alg}).
 
 
@@ -105,7 +105,7 @@ There are two main types of operators in evolutionary algorithms:
 \subsubsection{Crossover}
 In evolutionary algorithms, crossover is a genetic operator used to vary the
 programming of a chromosome or chromosomes from one generation to the next.  In
-this paper, we use a two-point crossover, that is , two points is selected
+this paper, we use a two-point crossover,that is , two points is selected
 randomly on the parent organism strings. Everything between the two points is
 swapped between the parent organisms, rendering two child organisms then
 exchange corresponding part of chromosomes to get offspring individual.
