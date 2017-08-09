@@ -3,8 +3,6 @@
 %
 
 \section{Description and Design of Algorithm}
-
-\subsection{Summary}
 %
 This paper aims to solve above-mentioned project management problem by using
 evolutionary algorithm.
@@ -49,7 +47,7 @@ $T_9$, $T_2$, $T_7$, while arranging the work packages. This representation is
 beneficial to programming and intuitive.
 
 
-\subsection{Fitness Function}
+\subsection{Fitness Evaluation}
 %
 The above-mentioned representation of solution make each individual coded as
 \emph{WPS}. The fitness value of \emph{WPS} is the project's overall duration,
@@ -59,9 +57,62 @@ package sequence, see equation (\ref{wps}).
 For each \emph{WPS}, the algorithm to calculate corresponding project overall
 duration is as follows. Firstly, according to first-come-first-served (FCFS)
 rule, the front work packages in a \emph{WPS} has high priority to get
-resources, need to allocate in the resource diagram and the workload of each
-work package, it will execute allocation of resources for the priority of each
-individual work package coding. After the allocation, each work package will
-have the start time and end time. Then the maximum execution time for all work
-packages is the overall duration of the project.
+resources, the back work packages has low priority. Secondly, the $TR$ function
+defines which work package can get which resources, if two work packages that
+requires the same resources, the higher priority one will use the resources
+first, the lower priority one will use the resources after the higher one
+releases the resources. Finally, the project's overall duration is the last end
+time after all work packages is allocated the resources (see algorithm
+\ref{alg}).
 
+
+\begin{algorithm}
+  \caption{Project's Overall Duration - \emph{FCFS} Algorithm}
+  \label{alg}
+  \begin{algorithmic}
+    \REQUIRE $WPS, R, TE, TR$
+    \ENSURE $duration$
+    \FOR {$i$ \textbf{from} $1$ \textbf{to} $WPS.length$}
+      \STATE $t \gets WPS[i]$
+      \STATE $ effort \gets TE(i)$
+      \FOR {$r$ \textbf{in} $R$}
+        \STATE $r.occupy \gets 0$
+      \ENDFOR 
+      \FOR {$r$ \textbf{in} $R$}
+        \IF{$TR(t,r) = true$}
+          \STATE $t.start \gets r.occupy$
+          \STATE $t.end \gets r.occupy + effort$
+          \STATE $r.occupy \gets t.end$
+          \STATE \textbf{break}
+        \ENDIF
+      \ENDFOR
+    \ENDFOR
+    \STATE $duration \gets 0$  
+    \FOR {$t$ \textbf{in} $WPS$}
+      \IF{$t.end > duration$}
+        \STATE $duration \gets t.end$
+      \ENDIF
+    \ENDFOR
+  \end{algorithmic}
+\end{algorithm}
+
+\subsection{Genetic Operators}
+%
+
+There are two main types of operators in evolutionary algorithms:
+\emph{crossover} and \emph{mutation}.
+
+\subsubsection{Crossover}
+In evolutionary algorithms, crossover is a genetic operator used to vary the
+programming of a chromosome or chromosomes from one generation to the next.  In
+this paper, we use a two-point crossover, that is , two points is selected
+randomly on the parent organism strings. Everything between the two points is
+swapped between the parent organisms, rendering two child organisms then
+exchange corresponding part of chromosomes to get offspring individual.
+
+\subsubsection{Mutation}
+In evolutionary algorithms, Mutation is a genetic operator used to maintain
+genetic diversity from one generation of a population of genetic algorithm
+chromosomes to the next.  In this paper, we use two-point exchange mutation,
+that is, two points is selected randomly on individual organisms strings, and
+then exchange the two points.
