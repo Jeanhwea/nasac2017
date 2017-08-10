@@ -1,5 +1,5 @@
 
-\section{Evolution Algorithm}
+\section{Evolutionary Algorithm}
 
 \subsection{Meta-heuristic Algorithms}
 %
@@ -48,7 +48,10 @@ algorithm. In the 1980s, a number of new meta-heuristic algorithms emerged,
 such as Simulated Annealing Algorithm, Artificial Neural Network, Tabu Search 
 and etc. Today, the research of meta-heuristic algorithm has been developing 
 towards a new height \cite{harman}. What are concerned greatly among them are 
-Evolutionary Algorithm, Ant Algorithms, Genetic Quantum Algorithm.  
+Evolutionary Algorithm, Ant Algorithms, Genetic Quantum Algorithm.
+
+\subsection{Evolutionary algorithm}
+
 Evolutionary algorithm draws on Darwin's theory of evolution and Mendel's 
 theory of genetic gene. Its essence is an efficient global search algorithm 
 that imitates the biological evolution of nature. In the process of searching 
@@ -57,7 +60,15 @@ more optimal individual in the large population, and control search process
 adaptively. It can converge to the better solution oriented according to the 
 natural law of the strong stronger and the weak weaker \cite{deb}.
 
-Figure 1 summarizes the basic process of the evolutionary algorithm. The core 
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[height=0.6\textheight]{figures/ea_flow.jpg}
+  \caption{Evolutionary algorithm}
+  \label{fig:evflow}
+\end{figure}
+
+
+Figure \ref{fig:evflow} summarizes the basic process of the evolutionary algorithm. The core 
 of the evolutionary algorithm is the design of encoding of candidate 
 solutions and the fitness function. The evolutionary algorithm first encodes 
 the solutions according to the different requirements of problem. each 
