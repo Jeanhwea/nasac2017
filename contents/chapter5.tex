@@ -17,7 +17,7 @@ management problem, and get an optimized answer?
 efficiency in the project management problem?
 
 
-\subsection{Experimental Data}
+\subsection{Experiment Data}
 %
 The experimental data evaluated in this paper are real industrial project
 management plans.
@@ -61,29 +61,29 @@ the whole population, and then plot the statistical data into a boxplot diagram.
 Each generation of the boxplot shows the five statistical data of all
 individuals' fitness value in the whole population: the minimum, the lower
 quartile, the median, the upper quartile and the maximum. Boxplot about the
-above-mentioned three industrial projects is shown in Figure \ref{fig:pa1},
-Figure \ref{fig:pa2} and Figure \ref{fig:pa3}. From the trend of three projects,
+above-mentioned three industrial projects is shown in figure \ref{fig:pa1},
+figure \ref{fig:pa2} and figure \ref{fig:pa3}. From the trend of three projects,
 it can be seen that the population is diversified when the population is
 initialized. As the number of generation increase, all the fitness value begins
 to decrease, and finally converges to a optimized result.
 
 \begin{figure}[!htb]
   \centering
-  \includegraphics[width=\textwidth]{figures/fig_pa1.eps}
+  \includegraphics[width=0.8\textwidth]{figures/fig_pa1.eps}
   \caption{Trend of \emph{A-Input}, solution converges in \emph{19th} generation}
   \label{fig:pa1}
 \end{figure}
 
 \begin{figure}[!htb]
   \centering
-  \includegraphics[width=\textwidth]{figures/fig_pa2.eps}
+  \includegraphics[width=0.8\textwidth]{figures/fig_pa2.eps}
   \caption{Trend of \emph{B-DBUpgrade}, solution converges in \emph{22rd} generation}
   \label{fig:pa2}
 \end{figure}
 
 \begin{figure}[!htb]
   \centering
-  \includegraphics[width=\textwidth]{figures/fig_pa3.eps}
+  \includegraphics[width=0.8\textwidth]{figures/fig_pa3.eps}
   \caption{Trend of \emph{C-SmartPrice}, solution converges in \emph{15th} generation}
   \label{fig:pa3}
 \end{figure}
@@ -99,16 +99,16 @@ In order to answer \textbf{RQ2}, this section conduct a efficiency experiment
 that compares the efficiency between the parallel evolutionary algorithm and the
 sequential one.
 
-The hardware environment of this experiment is as follows: the
-runtime environment that execute the sequential evolutionary algorithm is the
-Intel i7 series central processing unit (abbreviated as CPU). The runtime
-environment of the parallel evolutionary algorithm is the NVidia GeForce series
-graphics processing unit (abbreviated as GPU ). CPU and GPU detailed
-configuration comparison see Table \ref{tab:cpugpu}. The software environment of
-this experiment is: Window 7 Ultimate Service Pack 1, Microsoft Visual Studio
-2012 C++ Compiler, CUDA 7.0.28 Runtime compilation environment.
+The hardware environment of this experiment is as follows: the runtime
+environment that execute the sequential evolutionary algorithm is the Intel i7
+series CPU (abbreviated as CPU). The runtime environment of the parallel
+evolutionary algorithm is the NVidia GeForce series GPU (abbreviated as GPU
+). CPU and GPU detailed configuration comparison see Table \ref{tab:cpugpu}. The
+software environment of this experiment is: Window 7 Ultimate Service Pack 1,
+Microsoft Visual Studio 2012 C++ Compiler, CUDA 7.0.28 Runtime compilation
+environment.
 
-\begin{table}
+\begin{table}[!h]
   \centering
   \caption{Hardware Configuration Comparison}
   \label{tab:cpugpu}
@@ -123,16 +123,6 @@ this experiment is: Window 7 Ultimate Service Pack 1, Microsoft Visual Studio
   \end{tabular}
 \end{table}
 
-This experiment uses the above three items as input to evaluate the performance
-comparison of the parallel evolutionary algorithm and the sequential evolution
-algorithm. The specific work about encoding has actually completed two versions
-of the project management algorithm, the sequential version is written in C++
-language and parallel version is written using CUDA C++ language. It is used to
-verify the difference between the parallel evolutionary algorithm and the sequential
-evolution algorithm in project management problem by the code design experiment
-of the two versions.
-
-
 The initial configuration of the two versions is the identical, which the number
 of population is 1000 and the number of generation is 100. Each generation
 includes crossover, mutation and selection. A timer is set to record the total
@@ -143,30 +133,30 @@ environment under the same criteria.
 
 \begin{figure}[!htb]
   \centering
-  \includegraphics[width=\textwidth]{figures/fig_pa1.eps}
+  \includegraphics[width=0.8\textwidth]{figures/fig_pa1.eps}
   \caption{Trend of \emph{A-Input}, solution converges in \emph{19th} generation}
   \label{fig:pa1c}
 \end{figure}
 
 \begin{figure}[!htb]
   \centering
-  \includegraphics[width=\textwidth]{figures/fig_pa1.eps}
+  \includegraphics[width=0.8\textwidth]{figures/fig_pa1.eps}
   \caption{Trend of \emph{A-Input}, solution converges in \emph{19th} generation}
   \label{fig:pa2c}
 \end{figure}
 
 \begin{figure}[!htb]
   \centering
-  \includegraphics[width=\textwidth]{figures/fig_pa1.eps}
+  \includegraphics[width=0.8\textwidth]{figures/fig_pa1.eps}
   \caption{Trend of \emph{A-Input}, solution converges in \emph{19th} generation}
   \label{fig:pa3c}
 \end{figure}
 
-The 10 time-consuming charts for Project A, Project B, and Project C are shown
-in Figures \ref{fig:pa1c}, \ref{fig:pa2c} and \ref{fig:pa3c}. It can be seen
-from the figures that the time- consuming on the CPU algorithm is roughly twice
-as long as the GPU algorithm.  At the same time, the advantage of using the GPU
-algorithm in the calculation of project management problems is that we can make
-better use of system resources. So it can be a good answer to \textbf{RQ2} that
-parallel evolution algorithm can effectively improve the efficiency of computing
-in the project management problems.
+The efficiency experiments are repeated $10$ times.  The final result of
+\emph{A-Input}, \emph{B-DBUpgrade} and \emph{C-SmartPrice} are shown in figures
+\ref{fig:pa1c}, figures \ref{fig:pa2c} and figure \ref{fig:pa3c}. It can be seen
+from the figures that the time-consuming of the sequential algorithm on CPU is
+roughly twice as long as the parallel algorithm on GPU. So it can be a good
+answer to \textbf{RQ2} that parallel evolutionary algorithm can improve the
+efficiency on computing the project management problems.
+
