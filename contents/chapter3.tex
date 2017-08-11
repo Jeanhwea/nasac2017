@@ -10,7 +10,7 @@ The core of project management problem is work package scheduling and resource
 allocation.
 
 % figure 2
-\begin{figure}[ht]
+\begin{figure}[!ht]
   \centering
   \includegraphics[width=0.8\textwidth]{figures/pm_sample.jpg}
   \caption{Project Plan of Software Development}
@@ -53,7 +53,7 @@ solution for the project management problem described as follows:
 There are three assumptions for our project management problem.
 
 
-\emph{Assumption I}: The software project plan can be decomposed into a set of
+Assumption I: The software project plan can be decomposed into a set of
 work packages containing $N$ elements $T = \{t_1, t_2, ..., t_N \}$.
 Each work package in set $T$ is indivisible (ie, The work package cannot be
 split to other work package in the schedule), the set of work packages have a
@@ -64,7 +64,7 @@ estimated workload $e_i = TE(t_i)$ for a work package $t_i$, where $e_i$ is the
 estimated workload of $t_i$.
 
 
-\emph{Assumption II}: The work packages in the software project plan can be
+Assumption II: The work packages in the software project plan can be
 processed with $M$ kinds of resources, which constitute a resource set
 $R = \{r_1, r_2, ..., r_M \}$, for each project's work package set $T$ and the
 resource set $R$, There exists a function $TR: T \times R \rightarrow \{0, 1\}$,
@@ -73,7 +73,7 @@ means the resource $r_j$ can be allocated to the work package $t_i$, while
 $TR(t_i, r_j) = 0$ means cannot.
 
 
-\emph{Assumption III}: All work packages in the set $T$ of the software project
+Assumption III: All work packages in the set $T$ of the software project
 plan have dependencies. These dependencies form a set
 $Dep= \{t_i \rightarrow t_j \mid t_i, t_j \in T, t_j \text{ depends on } t_i\}$.
 As the assumption of this paper, $t_i \rightarrow t_j$ means that $t_j$ depends
