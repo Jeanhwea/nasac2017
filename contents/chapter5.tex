@@ -42,22 +42,22 @@ The configuration of the projects is shown in Table \ref{tab:statis}.
 
 \begin{figure}[!ht]
   \centering
-  \subfigure[sub a]{
+  \subfigure[\emph{A-Input}]{
     \centering
     \label{fig:dag:a} 
     \includegraphics[width=0.85\textwidth]{figures/a.eps}
   }
-  \subfigure[sub b]{
+  \subfigure[\emph{B-DBUpgrade}]{
     \centering
     \label{fig:dag:b}
     \includegraphics[width=\textwidth]{figures/b.eps}
   }
-  \subfigure[sub c]{
+  \subfigure[\emph{C-SmartPrice}]{
     \centering
     \label{fig:dag:c}
     \includegraphics[width=\textwidth]{figures/c.eps}
   }
-  \caption{caption a}
+  \caption{Three Projects' \emph{work packages}, \emph{resources} and \emph{dependencies}}
   \label{fig:dag}
 \end{figure}
 
@@ -99,22 +99,21 @@ result.
 
 \begin{figure}[ht]
   \centering
-  \subfigure[Trend of \emph{A-Input}, solution converges in \emph{19th} generation]{
+  \subfigure[\emph{A-Input}'s solution converges on \emph{19th} generation]{
     \label{fig:pj:a} 
     \includegraphics[width=0.8\textwidth]{figures/fig_pa1.eps}
   }
-  \subfigure[Trend of \emph{B-DBUpgrade}, solution converges in \emph{22rd} generation]{
+  \subfigure[\emph{B-DBUpgrade}'s solution converges on \emph{22rd} generation]{
     \label{fig:pj:b} 
     \includegraphics[width=0.8\textwidth]{figures/fig_pa2.eps}
   }
-  \subfigure[Trend of \emph{A-Input}, solution converges in \emph{15th} generation]{
+  \subfigure[\emph{A-Input}'s solution converges on \emph{15th} generation]{
     \label{fig:pj:c} 
     \includegraphics[width=0.8\textwidth]{figures/fig_pa3.eps}
   }
-  \caption{caption}
+  \caption{Statistics of Fitness Value in Each Generation}
   \label{fig:pj}
 \end{figure}
-
 
 
 Through the above analysis results of experimental data, we can accurately
@@ -146,7 +145,7 @@ environment.
     CPU & GPU  \\
     \hline
     \hspace{.5cm} Intel i7 CPU 870 \hspace{.5cm} & \hspace{.5cm} GeForce GTX 970 \hspace{.5cm} \\
-    2.93 GHz &:q 1.27 GHz \\
+    2.93 GHz & 1.27 GHz \\
     8 cores & 1664 cores \\
     \hline
   \end{tabular}
@@ -163,7 +162,7 @@ environment under the same criteria.
 
 \begin{table}
   \centering
-  \caption{Three Project's Time of Calculation}
+  \caption{Three Projects' Calculation Time}
   \label{tab:consuming}
   \begin{tabular}{ccc|cc|cc}
     \hline
@@ -186,22 +185,20 @@ environment under the same criteria.
   \end{tabular}
 \end{table}
 
-
+% comparison figures
 \begin{figure}[!htb]
   \centering
-  \subfigure[\emph{A-Input}'s Time of Calculation]{
+  \subfigure[\emph{A-Input}'s time spend on CPU is \emph{1.80} times than on GPU]{
     \label{fig:co:a}
-    \includegraphics[width=0.8\textwidth]{figures/fig_co1.eps}
-  }
-  \subfigure[\emph{B-DBUpgrade}'s Time of Calculation]{
+    \includegraphics[width=0.8\textwidth]{figures/fig_co1.eps} }
+  \subfigure[\emph{B-DBUpgrade}'s time spend on CPU is \emph{2.10} times than on GPU]{
     \label{fig:co:b}
-    \includegraphics[width=0.8\textwidth]{figures/fig_co2.eps}
-  }
-  \subfigure[\emph{C-SmartPrice}'s Time of Calculation]{
+    \includegraphics[width=0.8\textwidth]{figures/fig_co2.eps} }
+  \subfigure[\emph{C-SmartPrice}'s time spend on CPU is \emph{2.00} times that on GPU]{
     \label{fig:co:c}
     \includegraphics[width=0.8\textwidth]{figures/fig_co3.eps}
   }
-  \caption{Time Comparison of \emph{CPU} and \emph{GPU}}
+  \caption{Calculation Time Comparison of \emph{CPU} and \emph{GPU}}
   \label{fig:co}
 \end{figure}
 
