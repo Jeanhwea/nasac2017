@@ -55,18 +55,18 @@ projects is shown in Table \ref{tab:statis}.
 \end{figure}
 
 
-
+% 
 \begin{table}[!h]
   \centering
   \caption{Three Project's Configuration}
   \label{tab:statis}
   \begin{tabular}{lccc}
     \hline
-      & \emph{ A-Input } & \emph{ B-DBUpgrade } & \emph{ C-SmartPrice } \\
+      & $\#$ work packages & $\#$ resources & $\#$ dependencies \\
     \hline
-    number of \emph{work packages} & 33 & 106 & 74 \\
-    number of \emph{resources}     & 4  & 8   & 14 \\
-    number of \emph{dependencies}  & 35 & 105 & 73 \\
+    \emph{A-Input}      & 33  & 4  & 33  \\
+    \emph{B-DBUpgrade}  & 106 & 8  & 105 \\
+    \emph{C-SmartPrice} & 74  & 14 & 73  \\
     \hline
   \end{tabular}
 \end{table}
@@ -84,32 +84,31 @@ the whole population, and then plot the statistical data into a boxplot diagram.
 Each generation of the boxplot shows the five statistical data of all
 individuals' fitness value in the whole population: the minimum, the lower
 quartile, the median, the upper quartile and the maximum. Boxplot about the
-above-mentioned three industrial projects is shown in figure \ref{fig:pa1},
-figure \ref{fig:pa2} and figure \ref{fig:pa3}. From the trend of three projects,
-it can be seen that the population is diversified when the population is
-initialized. As the number of generation increase, all the fitness value begins
-to decrease, and finally converges to a optimized result.
+above-mentioned three industrial projects is shown in figures \ref{fig:pj}. From
+the trend of three projects, it can be seen that the population is diversified
+when the population is initialized. As the number of generation increase, all
+the fitness value begins to decrease, and finally converges to a optimized
+result.
 
-\begin{figure}[!htb]
+\begin{figure}[ht]
   \centering
-  \includegraphics[width=0.8\textwidth]{figures/fig_pa1.eps}
-  \caption{Trend of \emph{A-Input}, solution converges in \emph{19th} generation}
-  \label{fig:pa1}
+  \subfigure[Trend of \emph{A-Input}, solution converges in \emph{19th} generation]{
+    \label{fig:pj:a} 
+    \includegraphics[width=0.8\textwidth]{figures/fig_pa1.eps}
+  }
+  \subfigure[Trend of \emph{B-DBUpgrade}, solution converges in \emph{22rd} generation]{
+    \label{fig:pj:b} 
+    \includegraphics[width=0.8\textwidth]{figures/fig_pa2.eps}
+  }
+  \subfigure[Trend of \emph{A-Input}, solution converges in \emph{15th} generation]{
+    \label{fig:pj:c} 
+    \includegraphics[width=0.8\textwidth]{figures/fig_pa3.eps}
+  }
+  \caption{caption}
+  \label{fig:pj}
 \end{figure}
 
-\begin{figure}[!htb]
-  \centering
-  \includegraphics[width=0.8\textwidth]{figures/fig_pa2.eps}
-  \caption{Trend of \emph{B-DBUpgrade}, solution converges in \emph{22rd} generation}
-  \label{fig:pa2}
-\end{figure}
 
-\begin{figure}[!htb]
-  \centering
-  \includegraphics[width=0.8\textwidth]{figures/fig_pa3.eps}
-  \caption{Trend of \emph{C-SmartPrice}, solution converges in \emph{15th} generation}
-  \label{fig:pa3}
-\end{figure}
 
 Through the above analysis results of experimental data, we can accurately
 answer \textbf{RQ1}. In the project management problems, the evolutionary
@@ -154,32 +153,31 @@ and ends after the result is calculated. This allows us to count the total
 computational time both in the sequential environment and the parallel
 environment under the same criteria.
 
-\begin{figure}[!htb]
+\begin{figure}[!ht]
   \centering
-  \includegraphics[width=0.8\textwidth]{figures/fig_co1.eps}
-  \caption{\emph{A-Input}'s Time of Calculation}
-  \label{fig:co1}
+  \subfigure[\emph{A-Input}'s Time of Calculation]{
+    \label{fig:co:a}
+    \includegraphics[width=0.8\textwidth]{figures/fig_co1.eps}
+  }
+  \subfigure[\emph{B-DBUpgrade}'s Time of Calculation]{
+    \label{fig:co:b}
+    \includegraphics[width=0.8\textwidth]{figures/fig_co2.eps}
+  }
+  \subfigure[\emph{C-SmartPrice}'s Time of Calculation]{
+    \label{fig:co:c}
+    \includegraphics[width=0.8\textwidth]{figures/fig_co3.eps}
+  }
+  \caption{Time Comparison of \emph{CPU} and \emph{GPU}}
+  \label{fig:co}
 \end{figure}
 
-\begin{figure}[!htb]
-  \centering
-  \includegraphics[width=0.8\textwidth]{figures/fig_co2.eps}
-  \caption{\emph{B-DBUpgrade}'s Time of Calculation}
-  \label{fig:co2}
-\end{figure}
 
-\begin{figure}[!htb]
-  \centering
-  \includegraphics[width=0.8\textwidth]{figures/fig_co3.eps}
-  \caption{\emph{C-SmartPrice}'s Time of Calculation}
-  \label{fig:co3}
-\end{figure}
 
 The efficiency experiments are repeated $10$ times.  The final result of
 \emph{A-Input}, \emph{B-DBUpgrade} and \emph{C-SmartPrice} are shown in figures
-\ref{fig:co1}, figures \ref{fig:co2} and figure \ref{fig:co3}. It can be seen
-from the figures that the time-consuming of the sequential algorithm on CPU is
-roughly twice as long as the parallel algorithm on GPU. So it can be a good
-answer to \textbf{RQ2} that parallel evolutionary algorithm can improve the
-efficiency on computing the project management problems.
+\ref{fig:co}. It can be seen from the figures that the time-consuming of the
+sequential algorithm on CPU is roughly twice as long as the parallel algorithm
+on GPU. So it can be a good answer to \textbf{RQ2} that parallel evolutionary
+algorithm can improve the efficiency on computing the project management
+problems.
 
