@@ -2,12 +2,13 @@
 % ---------- chapter 5 ----------
 %
 
-\section{Empirical Study}
+\section{Experimental Results}
 %
 To assess the evolutionary algorithm proposed in this paper, two separated
 evaluation experiments are made for the efficiency of parallel evolutionary
 algorithm and the validity of evolutionary algorithm in project management
-problem. The purpose of the experiment is to answer the following two questions:
+problem. The purpose of the experiment is to answer the following two research
+questions:
 
 
 \textbf{RQ1}: Does the evolutionary algorithm effectively optimize project
@@ -17,7 +18,7 @@ management problem, and get an optimized answer?
 efficiency in the project management problem?
 
 
-\subsection{Experiment Data}
+\subsection{Industrial Project Data}
 %
 The experimental data evaluated in this paper are real industrial project
 management plans.
@@ -58,7 +59,7 @@ projects is shown in Table \ref{tab:statis}.
 % 
 \begin{table}[!h]
   \centering
-  \caption{Three Project's Configuration}
+  \caption{Three Project's Parameters}
   \label{tab:statis}
   \begin{tabular}{lccc}
     \hline
@@ -72,9 +73,9 @@ projects is shown in Table \ref{tab:statis}.
 \end{table}
 
 
-\subsection{Validation Experiment for Algorithm}
+\subsection{Effectiveness Experiment for Algorithm}
 %
-In order to answer \textbf{RQ1}, this section designs a validation experiment
+In order to answer \textbf{RQ1}, this section designs a effectiveness experiment
 for evolutionary algorithm. The basic configuration used in the experiment is
 that \emph{100} individuals runs in \emph{50} generations. For each generation
 in the evolutionary algorithm, we counts the each individuals' fitness value in
@@ -134,13 +135,13 @@ environment.
   \centering
   \caption{Hardware Configuration Comparison}
   \label{tab:cpugpu}
-  \begin{tabular}{lcc}
+  \begin{tabular}{c|c}
     \hline
-        & \emph{ CPU } & \emph{ GPU } \\
+    CPU & GPU  \\
     \hline
-    \emph{ processor } & ``Intel i7 CPU 870'' & ``GeForce GTX 970'' \\
-    \emph{ frequency } & 2.93 GHz & 1.27 GHz \\
-    \emph{ number of cores } & 8 & 1664 \\
+    \hspace{.5cm} Intel i7 CPU 870 \hspace{.5cm} & \hspace{.5cm} GeForce GTX 970 \hspace{.5cm} \\
+    2.93 GHz &:q 1.27 GHz \\
+    8 cores & 1664 cores \\
     \hline
   \end{tabular}
 \end{table}
@@ -153,7 +154,36 @@ and ends after the result is calculated. This allows us to count the total
 computational time both in the sequential environment and the parallel
 environment under the same criteria.
 
+<<<<<<< Updated upstream
 \begin{figure}[!ht]
+=======
+\begin{table}
+  \centering
+  \caption{Three Project's Time of Calculation}
+  \label{tab:consuming}
+  \begin{tabular}{ccc|cc|cc}
+    \hline
+    & \multicolumn{2}{c}{ \emph{A-Input} } & \multicolumn{2}{c}{ \emph{B-DBUpgrade} } & \multicolumn{2}{c}{ \emph{C-SmartPrice} } \\
+    \hline
+      Time(ms) & \hspace{.25cm} CPU \hspace{.25cm} & \hspace{.25cm} GPU \hspace{.25cm} & \hspace{.25cm} CPU \hspace{.25cm} & \hspace{.25cm} GPU \hspace{.25cm} & \hspace{.25cm} CPU \hspace{.25cm} & \hspace{.25cm} GPU \hspace{.25cm}\\
+    \hline
+     1 & 7991.8 & 8431.8 & 45225.1 & 21217.5 & 29642.9 & 14844.3 \\
+     2 & 8431.8 & 4279.7 & 44832.1 & 21377.9 & 28733.7 & 14543.6 \\
+     3 & 7504.1 & 3947.9 & 44934.9 & 21227.2 & 28657.9 & 15003.4 \\
+     4 & 7442.1 & 4642.5 & 44197.1 & 21340.3 & 29489.5 & 14882.8 \\
+     5 & 7376.9 & 4263.8 & 45233.7 & 22448.2 & 29379.5 & 14921.5 \\
+     6 & 7385.4 & 4188.6 & 45197.5 & 20956.1 & 28687.9 & 14723.3 \\
+     7 & 8238.8 & 4540.2 & 45305.4 & 21777.2 & 29786.3 & 13978.8 \\
+     8 & 7470.7 & 4226.4 & 45322.8 & 21147.1 & 31231.7 & 14811.1 \\
+     9 & 7604.8 & 3778.2 & 45040.7 & 21004.7 & 28319.7 & 14292.0 \\
+     10  & 7451.9 & 4712.4 & 45970.6 & 21500.9 & 28322.1 & 14429.7 \\
+     Avg. & 7689.8 & 4268.2 & 45126.0 & 21399.7 & 29225.1 & 14643.1 \\
+    \hline
+  \end{tabular}
+\end{table}
+
+
+\begin{figure}[!htb]
   \centering
   \subfigure[\emph{A-Input}'s Time of Calculation]{
     \label{fig:co:a}

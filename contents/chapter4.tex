@@ -2,7 +2,7 @@
 % ---------- chapter 4 ----------
 %
 
-\section{Description and Design of Algorithm}
+\section{Design of Algorithm}
 %
 This paper aims to solve above-mentioned project management problem by using
 evolutionary algorithm.
@@ -20,14 +20,14 @@ evolutionary algorithm.
 There are two important steps in using the evolutionary algorithm. One is to
 choose the representation of the problem's solution, the other is to define a
 appropriate fitness function. In the process of project management, the work
-packages in the project are allocated by simulation. See figure \ref{fig:simu}, Firstly, the
-whole project is decomposed into several work packages by \emph{work breakdown
-  structure}, and those work packages are arranged into a corresponding
-\emph{work package sequence}. Secondly, according to the dependencies of the
-work packages and the restriction of resource, each kinds of resources is
-allocated to the corresponding work package by \emph{first-come-first-served}
-(FCFS) algorithm. Finally, the project's overall duration is calculate by
-simulation.
+packages in the project are allocated by simulation. See figure \ref{fig:simu},
+Firstly, the whole project is decomposed into several work packages by
+\emph{work breakdown structure}, and those work packages are arranged into a
+corresponding \emph{work package sequence}. Secondly, according to the
+dependencies of the work packages and the restriction of resource, each kinds of
+resources is allocated to the corresponding work package by
+\emph{first-come-first-served} algorithm. Finally, the project's overall
+duration is calculate by simulation.
 
 
 \subsection{The Representation of Solution}
@@ -75,7 +75,7 @@ time after all work packages are allocated the resources (see algorithm
 
 
 \begin{algorithm}
-  \caption{Project's Overall Duration - \emph{FCFS} Algorithm}
+  \caption{Fitness Evaluation Algorithm}
   \label{alg}
   \begin{algorithmic}
     \REQUIRE $WPS, R, TE, TR$
