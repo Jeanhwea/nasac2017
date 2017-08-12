@@ -131,6 +131,31 @@ and ends after the result is calculated. This allows us to count the total
 computational time both in the sequential environment and the parallel
 environment under the same criteria.
 
+\begin{table}
+  \centering
+  \caption{Three Project's Time of Calculation}
+  \label{tab:consuming}
+  \begin{tabular}{ccccccc}
+    \hline
+      & \multicolumn{2}{c}{ A-Input } & \multicolumn{2}{c}{ B-DBUpgrade } & \multicolumn{2}{c}{ C-SmartPrice } \\
+    \hline
+      Time(ms) & \emph{ CPU } & \emph{ GPU } & \emph{ CPU } & \emph{ GPU } & \emph{ CPU } & \emph{ GPU }\\
+    \hline
+     1 & 7991.8 & 8431.8 & 45225.1 & 21217.5 & 29642.9 & 14844.3 \\
+     2 & 8431.8 & 4279.7 & 44832.1 & 21377.9 & 28733.7 & 14543.6 \\
+     3 & 7504.1 & 3947.9 & 44934.9 & 21227.2 & 28657.9 & 15003.4 \\
+     4 & 7442.1 & 4642.5 & 44197.1 & 21340.3 & 29489.5 & 14882.8 \\
+     5 & 7376.9 & 4263.8 & 45233.7 & 22448.2 & 29379.5 & 14921.5 \\
+     6 & 7385.4 & 4188.6 & 45197.5 & 20956.1 & 28687.9 & 14723.3 \\
+     7 & 8238.8 & 4540.2 & 45305.4 & 21777.2 & 29786.3 & 13978.8 \\
+     8 & 7470.7 & 4226.4 & 45322.8 & 21147.1 & 31231.7 & 14811.1 \\
+     9 & 7604.8 & 3778.2 & 45040.7 & 21004.7 & 28319.7 & 14292.0 \\
+     10  & 7451.9 & 4712.4 & 45970.6 & 21500.9 & 28322.1 & 14429.7 \\
+     Average & 7689.8 & 4268.2 & 45126.0 & 21399.7 & 29225.1 & 14643.1 \\
+    \hline
+  \end{tabular}
+\end{table}
+
 \begin{figure}[!htb]
   \centering
   \includegraphics[width=0.8\textwidth]{figures/fig_co1.eps}
