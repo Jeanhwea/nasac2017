@@ -2,7 +2,7 @@
 % ---------- chapter 4 ----------
 %
 
-\section{Description and Design of Algorithm}
+\section{Design of Algorithm}
 %
 This paper aims to solve above-mentioned project management problem by using
 evolutionary algorithm.
@@ -20,14 +20,14 @@ evolutionary algorithm.
 There are two important steps in using the evolutionary algorithm. One is to
 choose the representation of the problem's solution, the other is to define a
 appropriate fitness function. In the process of project management, the work
-packages in the project are allocated by simulation. See figure \ref{fig:simu}, Firstly, the
-whole project is decomposed into several work packages by \emph{work breakdown
-  structure}, and those work packages are arranged into a corresponding
-\emph{work package sequence}. Secondly, according to the dependencies of the
-work packages and the restriction of resource, each kinds of resources is
-allocated to the corresponding work package by \emph{first-come-first-served}
-(FCFS) algorithm. Finally, the project's overall duration is calculate by
-simulation.
+packages in the project are allocated by simulation. See figure \ref{fig:simu},
+Firstly, the whole project is decomposed into several work packages by
+\emph{work breakdown structure}, and those work packages are arranged into a
+corresponding \emph{work package sequence}. Secondly, according to the
+dependencies of the work packages and the restriction of resource, each kinds of
+resources is allocated to the corresponding work package by
+\emph{first-come-first-served} algorithm. Finally, the project's overall
+duration is calculate by simulation.
 
 
 \subsection{The Representation of Solution}
@@ -75,7 +75,7 @@ time after all work packages are allocated the resources (see algorithm
 
 
 \begin{algorithm}
-  \caption{Project's Overall Duration - \emph{FCFS} Algorithm}
+  \caption{Fitness Evaluation Algorithm}
   \label{alg}
   \begin{algorithmic}
     \REQUIRE $WPS, R, TE, TR$
@@ -125,3 +125,49 @@ genetic diversity from one generation of a population of genetic algorithm
 chromosomes to the next.  In this paper, we use two-point exchange mutation,
 that is, two points is selected randomly on individual organisms strings, and
 then exchange the two points.
+
+
+\subsection{Parallel Evolutionary Algorithm}
+%
+Figure \ref{fig:flow} summarizes the basic process of the evolutionary
+algorithm.
+
+
+\begin{figure}[!ht]
+  \centering
+  % fisrt figure
+  \begin{minipage}{0.40\textwidth}
+    \centering
+    \subfigure[Sequential] {
+      \label{fig:flow:s}
+      \includegraphics[width=\textwidth]{figures/ea_flow.pdf}
+    }
+  \end{minipage}
+  % second figure
+  \begin{minipage}{0.58\textwidth}
+    \centering
+    \subfigure[Parallel] {
+      \label{fig:flow:p}
+      \includegraphics[width=\textwidth]{figures/ea2_flow.pdf}
+    }
+  \end{minipage}
+  \caption{Sequential and Parallel Evolutionary Algorithm}
+  \label{fig:flow}
+\end{figure}
+
+
+Figure \ref{fig:flow:s} is common sequenctial evolutionary algorithm, the
+algorithm have several steps, such as initialization, crossover, mutation, and
+selection. Candidate solutions to the optimization problem play the role of
+individuals in a population, and the fitness function determines the convergence
+of the solutions. Evolution of the population then takes place after the
+repeated application of the above operators.
+
+
+Figure \ref{fig:flow:p} illustrates a parallel evolutionary algorithm. The
+parallel one follows most steps in sequenctial one, but put the top
+time-consuming work on GPU. The steps of crossover, mutation and evolution runs
+in different cores in GPU so that the speed of calculation can be impoved a lot.
+
+
+

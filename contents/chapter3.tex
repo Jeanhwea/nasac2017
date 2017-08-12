@@ -3,7 +3,7 @@
 \section{Project Management Problem}
 %
 
-\subsection{Background}
+\subsection{Project Plan}
 %
 
 The core of project management problem is work package scheduling and resource
@@ -32,7 +32,7 @@ often be synchronized.  The goal of project manager is using the shortest time
 to complete each work package during the duration of the software project.
 
 
-\subsection{Definition}
+\subsection{Definition and Assumptions}
 %
 The goal of this paper is to find an optimal solution or near optimal optimal
 solution for the project management problem described as follows:
@@ -47,8 +47,6 @@ solution for the project management problem described as follows:
   the work package dependency and the resource allocation restriction.
 }
 
-
-\subsection{Assumptions}
 %
 There are three assumptions for our project management problem.
 
@@ -84,9 +82,9 @@ package $t$).  And assume that there is no direct or indirect "loop" dependency
 between work packages.
 
 
-\subsection{The Object of Problem}
+\subsection{The Objective of Problem}
 %
-The object of project management is to find a optimal work package sequence
+The objective of project management is to find a optimal work package sequence
 under the three assumptions above.
 
 The notation of work package sequence(WPS) is as follows:
@@ -109,20 +107,22 @@ The WPS needs to meet the following two restrictions:
   (All work packages must have at least one resource)
 \end{enumerate}
 
-For the work package arrangement sequence S, each work package $t$ is
-given $t.start$ (the start time) and $t.end$ (the end time).  The
-total cost duration function of the project is defined as following:
+For the work package arrangement sequence S, each work package $t$ is given
+$t.start$ (the start time) and $t.end$ (the end time).  The total cost duration
+function of the project is defined as $f(S) = max\{t.end \mid t \in T\}$. That
+is, the total duration f represents the maximum value of the end time of all
+work packages in a work package arrangement sequence $S$, which means when the
+last work package of the project is completed, the entire project ends.
 
+The objective is defined as following:
+
+\textbf{Objective}:
 \begin{equation}
-f(S) = max\{t.end \mid t \in T\}
+  min(f(S)) = min(max\{t.end \mid t \in T\})
 \end{equation}
 
-that is, the total duration f represents the maximum value of the end
-time of all work packages in a work package arrangement sequence $S$,
-which means when the last work package of the project is completed,
-the entire project ends.
 
-The object of the project management problem is to find a work
+The objective of the project management problem is to find a work
 package sequence $S$ to arrange the whole project under the condition
 of satisfying the restriction of dependencies and resources, so that
 the total duration is minimized.
