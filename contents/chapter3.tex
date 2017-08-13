@@ -1,3 +1,4 @@
+% !TEX root = ../paper.tex
 % chapter3
 
 \section{Project Management Problem}
@@ -13,7 +14,7 @@ allocation.
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=0.9\textwidth]{figures/pm_sample.jpg}
-  \caption{Project Plan of Software Development}
+  \caption{Software Project Plan viewed in a Microsoft Project File (.mpp)}
   \label{fig:sample}
 \end{figure}
 
@@ -25,10 +26,10 @@ planning, requirements analysis, programming and testing, and project
 deployment, are inseparable from the allocation of work packages.  These work
 packages have a mutually restrictive relationship. Some work packages must be
 started when other work packages are completed. For instance, the analysis of
-software requirements are often to take place after the project planning is
-completed while some work packages can be done at the same time, and there is no
+software requirements is often to take place after the completion of project planning
+while some work packages can be done at the same time, and there is no
 impact on each other, such as software development and software testing can
-often be synchronized.  The goal of project manager is using the shortest time
+often be synchronized. The goal of project manager is using the shortest time
 to complete each work package during the duration of the software project.
 
 
@@ -54,7 +55,7 @@ to complete each work package during the duration of the software project.
 
 \subsection{Definition and Assumptions}
 %
-The goal of this paper is to find an optimal solution or near optimal optimal
+The goal of this paper is to find an optimal solution or near optimal
 solution for the project management problem described as follows:
 
 
@@ -104,7 +105,7 @@ between work packages.
 
 \subsection{The Objective of Problem}
 %
-The objective of project management is to find a optimal work package sequence
+The objective of project management is to find an optimal work package sequence
 under the three assumptions above.
 
 The notation of work package sequence(WPS) is as follows:
@@ -122,7 +123,7 @@ The WPS needs to meet the following two restrictions:
 
 \begin{enumerate}
 \item $\nexists i < j, t_j \rightarrow t_i \in Dep$.
-  (The WPS must satisfy dependencies)
+  (The WPS must satisfy the dependencies)
 \item $\nexists i, k, TR(t_i, r_k) = 0$.
   (All work packages must have at least one resource)
 \end{enumerate}

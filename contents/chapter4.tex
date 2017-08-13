@@ -7,9 +7,7 @@
 This paper aims to solve above-mentioned project management problem by using
 evolutionary algorithm. There are two important steps in using the evolutionary
 algorithm. One is to choose the representation of the problem's solution, the
-other is to define a appropriate fitness function. In the process of project
-management, the work
-
+other is to define a appropriate fitness function.
 
 %% \begin{figure}[!ht]
 %%   \centering
@@ -114,7 +112,7 @@ There are two main types of operators in evolutionary algorithms:
 \subsubsection{Crossover}
 In evolutionary algorithms, crossover is a genetic operator used to vary the
 programming of a chromosome or chromosomes from one generation to the next.  In
-this paper, we use a two-point crossover,that is , two points is selected
+this paper, we use a two-point crossover, that is, two points are selected
 randomly on the parent organism strings. Everything between the two points is
 swapped between the parent organisms, rendering two child organisms then
 exchange corresponding part of chromosomes to get offspring individual.
@@ -158,7 +156,7 @@ algorithm.
 
 
 Figure \ref{fig:flow:s} is common sequenctial evolutionary algorithm, the
-algorithm have several steps, such as initialization, crossover, mutation, and
+algorithm has several steps, such as initialization, crossover, mutation, and
 selection. Candidate solutions to the optimization problem play the role of
 individuals in a population, and the fitness function determines the convergence
 of the solutions. Evolution of the population then takes place after the
@@ -171,4 +169,22 @@ time-consuming work on GPU. The steps of crossover, mutation and evolution runs
 in different cores in GPU so that the speed of calculation can be impoved a lot.
 
 
+\subsection{Runtime Environment}
+%
+Both sequential and parallel's application is implemented on Window 7 operating
+system.
+
+The hardware environment of algorithm implementation is as follows: the runtime
+processor that executes the sequential evolutionary algorithm is the Intel i7
+series CPU (abbreviated as CPU). The runtime processor of the parallel
+evolutionary algorithm is the NVidia GeForce GTX 970 (abbreviated as GPU). The
+major difference between CPU and GPU is that they have different number of
+computation cores. Normally, the computation speed of a GPU core is lower than a
+CPU core. But GPU has far more than the number of CPU cores. In this paper, The
+CPU we used has 8 cores and the GPU has 1664 cores.
+
+The software environment that runs application is as follows: the sequential
+programs runs on Microsoft Visual Studio 2012 C++ Compiler environment, the
+parallel one runs on CUDA 7.0.28 Runtime environment. Both sequential and
+parallel application is evaluated in the same computer.
 
