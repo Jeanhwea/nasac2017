@@ -198,42 +198,47 @@ Visual Studio 2012 C++ Compiler environment, the parallel one runs on CUDA
 \end{table}
 
 
-The initial configuration of the two versions is the identical, which the number
-of population is $1000$ and the number of generation is $100$. Each generation
-runs several steps including crossover, mutation and selection etc. A timer is
-set to record the total executing time of the experiments. The timer starts
-after loading initial data and ends after the result is calculated. This
+The initial configuration of the two algorithms is the identical, which the
+number of population is $1000$ and the number of generation is $100$. Each
+generation runs several steps including crossover, mutation and selection etc. A
+timer is set to record the total executing time of the experiments. The timer
+starts after loading initial data and ends after the result is calculated. This
 operation allows us to count the real executing time both in the sequential
-environment and the parallel environment under the same criteria.
-The efficiency experiments are repeated $10$ times.  The final result of
-\projectA{}, \projectB{} and \projectC{} are shown in figures \ref{fig:co}. It
-can be seen from the figures that the time-consuming of the sequential algorithm
-on CPU is roughly twice as long as the parallel algorithm on GPU.
+environment and the parallel environment under the same criteria. The efficiency
+experiments are repeated $10$ times. Table \ref{tab:time} shows the comparison
+of sequential and parallel implementation executing time on all three industrial
+projects. By the comparison of average executing time of $10$ times results, the
+average executing time of \projectA{} on CPU is $1.80$ times than GPU, the
+average executing time of \projectB{} on CPU is $2.10$ times than GPU and the
+average executing time of \projectC{} on CPU is $2.00$ times than GPU.
 
-Table
-\ref{tab:time} shows the comparison of sequential and parallel implementation
-executing time on all three industrial projects.
+In summary, the executing times of sequential algorithm on CPU is roughly twice
+as long as the parallel algorithm on GPU. So it can be a good answer to
+\textbf{RQ2} that parallel evolutionary algorithm can improve the efficiency on
+computing the project management problems.
+
+%% The final result of \projectA{}, \projectB{} and \projectC{} are
+%% shown in figures \ref{fig:co}. It can be seen from the figures that the
+%% time-consuming of the sequential algorithm on CPU is roughly twice as long as
+%% the parallel algorithm on GPU.
+
 
 % comparison figures
-\begin{figure}[!hb]
-  \centering
-  \subfigure[\projectA{}'s executing time spend on CPU is \emph{1.80} times than GPU]{
-    \label{fig:co:a}
-    \includegraphics[width=0.8\textwidth]{figures/fig_co1.eps} }
-  \subfigure[\projectB{}'s executing time spend on CPU is \emph{2.10} times than GPU]{
-    \label{fig:co:b}
-    \includegraphics[width=0.8\textwidth]{figures/fig_co2.eps} }
-  \subfigure[\projectC{}'s Executing Time on CPU is \emph{2.00} times than that on GPU]{
-    \label{fig:co:c}
-    \includegraphics[width=0.8\textwidth]{figures/fig_co3.eps}
-  }
-  \caption{Executing Time Comparison of \emph{CPU} and \emph{GPU} Implementation}
-  \label{fig:co}
-\end{figure}
+%% \begin{figure}[!hb]
+%%   \centering
+%%   \subfigure[\projectA{}'s executing time spend on CPU is \emph{1.80} times than GPU]{
+%%     \label{fig:co:a}
+%%     \includegraphics[width=0.8\textwidth]{figures/fig_co1.eps} }
+%%   \subfigure[\projectB{}'s executing time spend on CPU is \emph{2.10} times than GPU]{
+%%     \label{fig:co:b}
+%%     \includegraphics[width=0.8\textwidth]{figures/fig_co2.eps} }
+%%   \subfigure[\projectC{}'s Executing Time on CPU is \emph{2.00} times than that on GPU]{
+%%     \label{fig:co:c}
+%%     \includegraphics[width=0.8\textwidth]{figures/fig_co3.eps}
+%%   }
+%%   \caption{Executing Time Comparison of \emph{CPU} and \emph{GPU} Implementation}
+%%   \label{fig:co}
+%% \end{figure}
 
 
-
-So it can be a
-good answer to \textbf{RQ2} that parallel evolutionary algorithm can improve the
-efficiency on computing the project management problems.
 
