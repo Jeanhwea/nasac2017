@@ -5,13 +5,10 @@
 
 \section{Conclusions and Future Works}
 %
-This paper proposes the use of Cooperative Co-Evolutionary Algorithms (CCEA) to solve software project planning and staffing problems.
-The co-evolutionary algorithm evolves two populations, one representing WP ordering in a queue (which determines
-their assignment to teams), and the other representing developers distribution among
-teams.
+This paper introduces a framework to solve the work package scheduling problem as a single objective optimization problem. The framework speeds up the evolution process by parallelizing the computation among each individual solutions on GPU. 
 
-We conducted an empirical study using data from four industrial software projects, aimed at comparing CCEA project planning and staffing with (i) random search and (ii) single population optimization using genetic algorithms, as previously proposed by Di Penta et al. [13].
-Results of the empirical study show that CCEA is able to outperform random search and single population GA, in terms of effectiveness (i.e., best solutions proposed in terms of project completion time) and efficiency (i.e., a smaller number of
-evaluations required).
+We conducted a ``proof of concept'' empirical study using data from three industrial software projects, aimed at demonstrate the effectiveness and efficiency of proposed framework.
+Results show that the population converge around 20 generations and the parallel version of single objective evolutionary algorithm spend half of the execution time compared to the sequential version even with only one relative cheap graphic card. 
+Therefore, we claim that heuristics provides mangers with intuitive features towards ``simple-to-deploy'', and paralleled computation running on GPU provides faster execution time.
 
-Future work aims at extending the study reported in this paper with further data sets and, above all, at considering a more sophisticated project model, which accounts for further factors not considered in this study, such as developers? skills and expertise, communication overhead models, and schedule robustness.
+Future work aims at extending the study reported in this paper with further data sets and accelerating hardware with more cores, above all, at considering a more sophisticated project model, which accounts for further factors not considered in this study, such as group configuration of staff and the interaction among staffing and scheduling.
