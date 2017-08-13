@@ -97,17 +97,17 @@ whole population, and then plot the statistical data into a boxplot diagram.
   \centering
   \subfigure[\projectA{}'s solution converges on \emph{19th} generation]{
     \label{fig:pj:a} 
-    \includegraphics[width=.75\textwidth]{figures/fig_pa1.eps}
+    \includegraphics[width=.7\textwidth]{figures/fig_pa1.eps}
   }
 
   \subfigure[\projectB{}'s solution converges on \emph{22rd} generation]{
     \label{fig:pj:b} 
-    \includegraphics[width=.75\textwidth]{figures/fig_pa2.eps}
+    \includegraphics[width=.7\textwidth]{figures/fig_pa2.eps}
   }
 
   \subfigure[\projectC{}'s solution converges on \emph{15th} generation]{
     \label{fig:pj:c} 
-    \includegraphics[width=0.75\textwidth]{figures/fig_pa3.eps}
+    \includegraphics[width=0.7\textwidth]{figures/fig_pa3.eps}
   }
   \caption{Statistics of Fitness Value in Each Generation}
   \label{fig:pj}
@@ -149,12 +149,13 @@ sequential one.
 The hardware environment of this experiment is as follows: the runtime
 environment that execute the sequential evolutionary algorithm is the Intel i7
 series CPU (abbreviated as CPU). The runtime environment of the parallel
-evolutionary algorithm is the NVidia GeForce GTX 970 (abbreviated as GPU). The
-CPU has 8 cores, and the GPU has 1664 cores. The software environment of this
-experiment is as follows: both sequential and parallel's experiment runs on
-Window 7 operating system. While the sequential programs runs on Microsoft
-Visual Studio 2012 C++ Compiler environment, the parallel one runs on CUDA
-7.0.28 Runtime environment.
+evolutionary algorithm is the NVidia GeForce GTX 970 (abbreviated as GPU).  The
+major difference between CPU and GPU is that they have different number of
+calculation cores. The CPU has 8 cores while the GPU has 1664 cores. The
+software environment of this experiment is as follows: both sequential and
+parallel's experiment runs on Window 7 operating system. While the sequential
+programs runs on Microsoft Visual Studio 2012 C++ Compiler environment, the
+parallel one runs on CUDA 7.0.28 Runtime environment.
 
 %% \begin{table}[!ht]
 %%   \centering
@@ -198,42 +199,47 @@ Visual Studio 2012 C++ Compiler environment, the parallel one runs on CUDA
 \end{table}
 
 
-The initial configuration of the two versions is the identical, which the number
-of population is $1000$ and the number of generation is $100$. Each generation
-runs several steps including crossover, mutation and selection etc. A timer is
-set to record the total executing time of the experiments. The timer starts
-after loading initial data and ends after the result is calculated. This
+The initial configuration of the two algorithms is the identical, which the
+number of population is $1000$ and the number of generation is $100$. Each
+generation runs several steps including crossover, mutation and selection etc. A
+timer is set to record the total executing time of the experiments. The timer
+starts after loading initial data and ends after the result is calculated. This
 operation allows us to count the real executing time both in the sequential
-environment and the parallel environment under the same criteria.
-The efficiency experiments are repeated $10$ times.  The final result of
-\projectA{}, \projectB{} and \projectC{} are shown in figures \ref{fig:co}. It
-can be seen from the figures that the time-consuming of the sequential algorithm
-on CPU is roughly twice as long as the parallel algorithm on GPU.
+environment and the parallel environment under the same criteria. The efficiency
+experiments are repeated $10$ times. Table \ref{tab:time} shows the comparison
+of sequential and parallel implementation executing time on all three industrial
+projects. By the comparison of average executing time of $10$ times results, the
+average executing time of \projectA{} on CPU is $1.80$ times than GPU, the
+average executing time of \projectB{} on CPU is $2.10$ times than GPU and the
+average executing time of \projectC{} on CPU is $2.00$ times than GPU.
 
-Table
-\ref{tab:time} shows the comparison of sequential and parallel implementation
-executing time on all three industrial projects.
+In summary, the executing time of sequential algorithm on CPU is roughly twice
+as long as the parallel algorithm on GPU. So it can be a good answer to
+\textbf{RQ2} that parallel evolutionary algorithm can improve the efficiency on
+computing the project management problems.
+
+%% The final result of \projectA{}, \projectB{} and \projectC{} are
+%% shown in figures \ref{fig:co}. It can be seen from the figures that the
+%% time-consuming of the sequential algorithm on CPU is roughly twice as long as
+%% the parallel algorithm on GPU.
+
 
 % comparison figures
-\begin{figure}[!hb]
-  \centering
-  \subfigure[\projectA{}'s executing time spend on CPU is \emph{1.80} times than GPU]{
-    \label{fig:co:a}
-    \includegraphics[width=0.8\textwidth]{figures/fig_co1.eps} }
-  \subfigure[\projectB{}'s executing time spend on CPU is \emph{2.10} times than GPU]{
-    \label{fig:co:b}
-    \includegraphics[width=0.8\textwidth]{figures/fig_co2.eps} }
-  \subfigure[\projectC{}'s Executing Time on CPU is \emph{2.00} times than that on GPU]{
-    \label{fig:co:c}
-    \includegraphics[width=0.8\textwidth]{figures/fig_co3.eps}
-  }
-  \caption{Executing Time Comparison of \emph{CPU} and \emph{GPU} Implementation}
-  \label{fig:co}
-\end{figure}
+%% \begin{figure}[!hb]
+%%   \centering
+%%   \subfigure[\projectA{}'s executing time spend on CPU is \emph{1.80} times than GPU]{
+%%     \label{fig:co:a}
+%%     \includegraphics[width=0.8\textwidth]{figures/fig_co1.eps} }
+%%   \subfigure[\projectB{}'s executing time spend on CPU is \emph{2.10} times than GPU]{
+%%     \label{fig:co:b}
+%%     \includegraphics[width=0.8\textwidth]{figures/fig_co2.eps} }
+%%   \subfigure[\projectC{}'s Executing Time on CPU is \emph{2.00} times than that on GPU]{
+%%     \label{fig:co:c}
+%%     \includegraphics[width=0.8\textwidth]{figures/fig_co3.eps}
+%%   }
+%%   \caption{Executing Time Comparison of \emph{CPU} and \emph{GPU} Implementation}
+%%   \label{fig:co}
+%% \end{figure}
 
 
-
-So it can be a
-good answer to \textbf{RQ2} that parallel evolutionary algorithm can improve the
-efficiency on computing the project management problems.
 
