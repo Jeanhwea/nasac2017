@@ -1,41 +1,39 @@
+% !TEX root = ../paper.tex
 % header
 %
-\title{Solving Project Management Problem with Parallel Evolutionary Algorithm}
+\title{Parallel Evolutionary Algorithm in Solving Single Objective Software Project Management Problem}
+%Solving Project Management Problem with Parallel Evolutionary Algorithm}
 %
 \titlerunning{Project Management}  % abbreviated title (for running head)
 %                                     also used for the TOC unless
 %                                     \toctitle is used
 %
-\author{Jian Ren\inst{1} \and Jinghui Hu\inst{1} \and Xu Wang\inst{1}}
+\author{ Jinghui Hu\inst{1} \and Xu Wang\inst{1} \and Jian Ren\inst{1} \and Chao Liu\inst{1}}
 %
-\authorrunning{Jian Ren et al.} % abbreviated author list (for running head)
+\authorrunning{Hu, Wang, Ren, Liu} % abbreviated author list (for running head)
 %
 %%%% list of authors for the TOC (use if author list has to be modified)
-\tocauthor{Jian Ren, Jinghui Hu, Xu Wang}
+\tocauthor{Jinghui Hu, Xu Wang, Jian Ren, Chao Liu}
 %
 \institute{Beihang University, Beijing 100191, China\inst{1}\\
-\email{\{renjian, hujinghui, bhwangxu\}@buaa.edu.cn}
+\email{\{hujinghui, bhwangxu, renjian, liuchao\}@buaa.edu.cn}
 }
 
 \maketitle
 
 \begin{abstract}
-In this paper, we focus on software project managers’ needs for
-software project planning. Firstly, we briefly introduce
-the background and current state of Software Project Management Problem (SPMP).
-The software project management problem mainly includes resources allocation
-and work packages scheduling. Our goal is to minimize the overall duration a software
-project, while satisfying the dependencies between work packages and constraints of resources
-allocation in the software project. Finding an optimal solution for above-mentioned software
-project problem is NP-hard. We learn from search based software engineering approach to
-analyze and solve software project management problem. We implement both sequential and
-parallel version applications, which are aim to solve the software project management
-problem. The sequential version application is based on common programming approach using
-C++ programming language, and the parallel version application is based on GPGPU programming
-approach using CUDA C++ API. We redesign search based evolutionary algorithm to cater for our
-purpose of parallel programming on GPU. Finally, we conduct a comparison experiment to verify
-the parallel evolutionary algorithm does improve computational efficiency and evolutionary
-algorithm always converge to nearly optimal solutions. 
+Software project management problem mainly includes resources allocation and work packages scheduling.
+This paper presents an approach to Search Based Software Project Management based on paralleled implementation of evolutionary algorithm on GPU. 
+Our approach aims to paralleled the genetic operators including: crossover, mutation and evaluation in the evolution process to achieve faster execution time for the optimization process.
+To evaluate our approach, we conducted a ``proof of concept'' empirical study, using data from three real-world software projects. 
+Both sequential and parallel version of a conventional single objective evolutionary algorithm are implemented. 
+%The objective is to minimize the overall duration a software project, while satisfying the dependencies between work packages and constraints of resources allocation in the software project.
+The sequential version application is based on common programming approach using C++ programming language, and the parallel version application is based on GPGPU programming approach using CUDA C++ API.
+We redesign search based evolutionary algorithm to cater for our purpose of parallel programming on GPU.
+Results indicate that even a relatively cheap graphic card (GeForce GTX 970) can speed up the optimization process significantly.
+We believe that deploy parallel evolutionary algorithm based on GPU  may fit many applications for other software project management problems, since software projects often have complex inter-related tasks and resource and are typically characterized by large scale problems that need to be paralleled to improve execution time.
+
+
 \keywords{Software project management, 
 Evolutionary algorithm, 
 Parallel Optimization Problem}
