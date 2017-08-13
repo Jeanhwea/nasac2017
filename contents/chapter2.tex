@@ -50,6 +50,16 @@ and etc. Today, the research of meta-heuristic algorithm has been developing
 towards a new height \cite{harman}. What are concerned greatly among them are 
 Evolutionary Algorithm, Ant Algorithms, Genetic Quantum Algorithm.
 
+As the development of the algorithm, how to speed up the calculation of the algorithm
+has become a hot spot in academic community. Nowsdays,  A general-purpose GPU(GPGPU) is uesd 
+to improve the speed of calculation in software engineering. In 2012, zhang apply GPGPU to
+simulation for complex scenes \cite{zhang}. Next year, Li proposed a GPU-based parallel MOEAs \cite{li}.
+CUDA is a generic parallel computing architecture developed by NVIDIA, which can be used to improve
+the performance of GPGPU \cite{langdon2} and also can be optimized by meta-heuristic algorithms \cite{langdon1}.
+
+
+
+
 \subsection{Evolutionary algorithm}
 
 Evolutionary algorithm draws on Darwin's theory of evolution and Mendel's 
@@ -60,34 +70,25 @@ more optimal individual in the large population, and control search process
 adaptively. It can converge to the better solution oriented according to the 
 natural law of the strong stronger and the weak weaker \cite{deb}.
 
-\begin{figure}[!ht]
-  \centering
-  \includegraphics[height=0.4\textheight]{figures/ea_flow.pdf}
-  \caption{Evolutionary algorithm}
-  \label{fig:evflow}
-\end{figure}
 
-
-Figure \ref{fig:evflow} summarizes the basic process of the evolutionary algorithm. The core 
-of the evolutionary algorithm is the design of encoding of candidate 
-solutions and the fitness function. The evolutionary algorithm first encodes 
-the solutions according to the different requirements of problem. each 
-individual in the population represents a solution to the problem. At the 
-same time, for each solution of the problem, we also need to design the 
-fitness function. The fitness value of different solutions is used to measure 
-the adaptability of different individuals. Individuals with high adaptability 
-are more likely to survive in the evolution process of population. After 
-encoding, there are four steps including initialized population, crossover, 
-mutation and selection. The specific operation of initialized population is 
-to generate the first generation of population randomly; The cross is to 
-product new offspring population by the individual hybridization between 
-parents then the mutation is to mutate certain genes in the individuals and 
-mutated individuals will be involved in population hybridization to maintain 
-the species diversity of the population. As a result, the operation above 
-will bring some novel solutions; Finally, the selection is to choose better 
-individuals in the whole population according to the natural law of winning. 
-In a word, the evolutionary algorithm obtains the optimal solution by the 
-evolution of the population.
+The core of the evolutionary algorithm is the design of encoding of candidate
+solutions and the fitness function. The evolutionary algorithm first encodes the
+solutions according to the different requirements of problem. each individual in
+the population represents a solution to the problem. At the same time, for each
+solution of the problem, we also need to design the fitness function. The
+fitness value of different solutions is used to measure the adaptability of
+different individuals. Individuals with high adaptability are more likely to
+survive in the evolution process of population. After encoding, there are four
+steps including initialized population, crossover, mutation and selection. The
+specific operation of initialized population is to generate the first generation
+of population randomly; The cross is to product new offspring population by the
+individual hybridization between parents then the mutation is to mutate certain
+genes in the individuals and mutated individuals will be involved in population
+hybridization to maintain the species diversity of the population. As a result,
+the operation above will bring some novel solutions; Finally, the selection is
+to choose better individuals in the whole population according to the natural
+law of winning.  In a word, the evolutionary algorithm obtains the optimal
+solution by the evolution of the population.
 
 
 
