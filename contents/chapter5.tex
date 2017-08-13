@@ -1,6 +1,9 @@
 %
 % ---------- chapter 5 ----------
 %
+\newcommand{\projectA}[0]{\emph{A-Input}}
+\newcommand{\projectB}[0]{\emph{B-DBUpgrade}}
+\newcommand{\projectC}[0]{\emph{C-SmartPrice}}
 
 \section{Experimental Results}
 %
@@ -25,34 +28,34 @@ management plans.
 
 
 A total number of three sets of industrial data have been used in the empirical
-studies for this paper, which are named as \emph{A-Input}, \emph{B-DBUpgrade}
-and \emph{C-SmartPrice}. These data come form real world peogects and have
-fundamental details such as: number of work packages, required skills and staff.
-Figure 4 shows the dependency graph that visualises the interdependency among
-WPS, resource and efforts required by each WPS, and critical path of each
-project. \emph{A-Input} is a simulated medium-scale project planning. The goal
-of \emph{B-DBUpgrade} is to upgrade the Oracle database from the \emph{9g}
-version to the \emph{10g} version, which is Oracle's non-public version of the
-project planning. There were different layers of the organisation involved
-including DBAs, BSAs, developers and users.  Furthermore, the project also
-included the training of the staff for the new features of the system.
-\emph{C-SmartPrice} consists of a supply chain enhancement of medium size
-affecting mostly the website as well as a few internal applications. \cite{ren}.
-The configuration of the projects is shown in Table \ref{tab:statis}.
+studies for this paper, which are named as \projectA, \projectB and
+\projectC. These data come form real world peogects and have fundamental details
+such as: number of work packages, required skills and staff.  Figure 4 shows the
+dependency graph that visualises the interdependency among WPS, resource and
+efforts required by each WPS, and critical path of each project. \projectA is a
+simulated medium-scale project planning. The goal of \projectB is to upgrade the
+Oracle database from the \emph{9g} version to the \emph{10g} version, which is
+Oracle's non-public version of the project planning. There were different layers
+of the organisation involved including DBAs, BSAs, developers and users.
+Furthermore, the project also included the training of the staff for the new
+features of the system.  \projectC consists of a supply chain enhancement of
+medium size affecting mostly the website as well as a few internal
+applications. \cite{ren}.  The configuration of the projects is shown in Table
+\ref{tab:statis}.
 
 \begin{figure}[!ht]
   \centering
-  \subfigure[\emph{A-Input}]{
+  \subfigure[\projectA]{
     \centering
     \label{fig:dag:a} 
     \includegraphics[width=0.85\textwidth]{figures/a.eps}
   }
-  \subfigure[\emph{B-DBUpgrade}]{
+  \subfigure[\projectB]{
     \centering
     \label{fig:dag:b}
     \includegraphics[width=\textwidth]{figures/b.eps}
   }
-  \subfigure[\emph{C-SmartPrice}]{
+  \subfigure[\projectC]{
     \centering
     \label{fig:dag:c}
     \includegraphics[width=\textwidth]{figures/c.eps}
@@ -71,9 +74,9 @@ The configuration of the projects is shown in Table \ref{tab:statis}.
     \hline
       & $\#$ work packages & $\#$ resources & $\#$ dependencies \\
     \hline
-    \emph{A-Input}      & 33  & 4  & 33  \\
-    \emph{B-DBUpgrade}  & 106 & 8  & 105 \\
-    \emph{C-SmartPrice} & 74  & 14 & 73  \\
+    \projectA      & 33  & 4  & 33  \\
+    \projectB  & 106 & 8  & 105 \\
+    \projectC & 74  & 14 & 73  \\
     \hline
   \end{tabular}
 \end{table}
@@ -99,15 +102,15 @@ result.
 
 \begin{figure}[ht]
   \centering
-  \subfigure[\emph{A-Input}'s solution converges on \emph{19th} generation]{
+  \subfigure[\projectA's solution converges on \emph{19th} generation]{
     \label{fig:pj:a} 
     \includegraphics[width=0.8\textwidth]{figures/fig_pa1.eps}
   }
-  \subfigure[\emph{B-DBUpgrade}'s solution converges on \emph{22rd} generation]{
+  \subfigure[\projectB's solution converges on \emph{22rd} generation]{
     \label{fig:pj:b} 
     \includegraphics[width=0.8\textwidth]{figures/fig_pa2.eps}
   }
-  \subfigure[\emph{A-Input}'s solution converges on \emph{15th} generation]{
+  \subfigure[\projectC's solution converges on \emph{15th} generation]{
     \label{fig:pj:c} 
     \includegraphics[width=0.8\textwidth]{figures/fig_pa3.eps}
   }
@@ -166,7 +169,7 @@ environment under the same criteria.
   \label{tab:consuming}
   \begin{tabular}{ccc|cc|cc}
     \hline
-    & \multicolumn{2}{c}{ \emph{A-Input} } & \multicolumn{2}{c}{ \emph{B-DBUpgrade} } & \multicolumn{2}{c}{ \emph{C-SmartPrice} } \\
+    & \multicolumn{2}{c}{ \projectA } & \multicolumn{2}{c}{ \projectB } & \multicolumn{2}{c}{ \projectC } \\
     \hline
       Time(ms) & \hspace{.25cm} CPU \hspace{.25cm} & \hspace{.25cm} GPU \hspace{.25cm} & \hspace{.25cm} CPU \hspace{.25cm} & \hspace{.25cm} GPU \hspace{.25cm} & \hspace{.25cm} CPU \hspace{.25cm} & \hspace{.25cm} GPU \hspace{.25cm}\\
     \hline
@@ -188,13 +191,13 @@ environment under the same criteria.
 % comparison figures
 \begin{figure}[!htb]
   \centering
-  \subfigure[\emph{A-Input}'s time spend on CPU is \emph{1.80} times than on GPU]{
+  \subfigure[\projectA's time spend on CPU is \emph{1.80} times than on GPU]{
     \label{fig:co:a}
     \includegraphics[width=0.8\textwidth]{figures/fig_co1.eps} }
-  \subfigure[\emph{B-DBUpgrade}'s time spend on CPU is \emph{2.10} times than on GPU]{
+  \subfigure[\projectB's time spend on CPU is \emph{2.10} times than on GPU]{
     \label{fig:co:b}
     \includegraphics[width=0.8\textwidth]{figures/fig_co2.eps} }
-  \subfigure[\emph{C-SmartPrice}'s time spend on CPU is \emph{2.00} times that on GPU]{
+  \subfigure[\projectC's time spend on CPU is \emph{2.00} times that on GPU]{
     \label{fig:co:c}
     \includegraphics[width=0.8\textwidth]{figures/fig_co3.eps}
   }
@@ -203,10 +206,9 @@ environment under the same criteria.
 \end{figure}
 
 The efficiency experiments are repeated $10$ times.  The final result of
-\emph{A-Input}, \emph{B-DBUpgrade} and \emph{C-SmartPrice} are shown in figures
-\ref{fig:co}. It can be seen from the figures that the time-consuming of the
-sequential algorithm on CPU is roughly twice as long as the parallel algorithm
-on GPU. So it can be a good answer to \textbf{RQ2} that parallel evolutionary
-algorithm can improve the efficiency on computing the project management
-problems.
+\projectA, \projectB and \projectC are shown in figures \ref{fig:co}. It can be
+seen from the figures that the time-consuming of the sequential algorithm on CPU
+is roughly twice as long as the parallel algorithm on GPU. So it can be a good
+answer to \textbf{RQ2} that parallel evolutionary algorithm can improve the
+efficiency on computing the project management problems.
 
