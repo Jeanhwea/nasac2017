@@ -25,20 +25,12 @@ efficiency in the project management problem?
 %
 Three industrial project plans have been used in the experimental studies for
 this paper, which are named as \projectA{}, \projectB{} and \projectC{}. These
-data come from real world projects and have fundamental details such as: number
-of work packages, required skills and staff.  Figure \ref{fig:dag} shows the
-dependencies among work packages, resources and duration of each work
-packages. \projectA{} is a simulated medium-scale project planning. \projectB{}
-is a real software development plan, which's goal is to upgrade the Oracle
-database from the \emph{9g} version to the \emph{10g} version. \projectB{} is
-Oracle's non-public version of the project planning. There were different layers
-of the organisation involved including DBAs, BSAs, developers and users.
-Furthermore, the project also included the training of the staff for the new
-features of the system. \projectC{} consists of a supply chain enhancement of
-medium size affecting mostly the website as well as a few internal applications
-\cite{ren2}. The details of the projects is shown in Table \ref{tab:statis}.
+data come from real world projects and have fundamental details, such as work
+packages, resources and dependencies. Table \ref{tab:statis} shows the number of
+each project.
+
 % 
-\begin{table}[!ht]
+\begin{table}[!h]
   \centering
   \caption{Three Project's Parameters}
   \label{tab:statis}
@@ -53,21 +45,36 @@ medium size affecting mostly the website as well as a few internal applications
   \end{tabular}
 \end{table}
 
+\projectA{} is a simulated small-scale project planning, it is a team work plan
+for finishing class assignments. \projectB{} is a real software development
+plan, which's goal is to upgrade the Oracle database from the \emph{9g} version
+to the \emph{10g} version. \projectB{} is Oracle's non-public version of the
+project planning. There were different layers of the organisation involved
+including DBAs, BSAs, developers and users.  Furthermore, the project also
+included the training of the staff for the new features of the
+system. \projectC{} consists of a supply chain enhancement of medium size
+affecting mostly the website as well as a few internal applications \cite{ren2}.
 
+Figure \ref{fig:dag} illustrates the relationship between work packages and
+resources. In each sub-figure, the rectangle represents a work packages in the
+project plan, the content in the rectangle is the work packages' ID and
+duration; the arrows between work packages suggest dependencies, notice that
+some redundant dependencies is removed; the folders in the bottom are some
+certain types of resources that can be allocated to work packages. 
 
 \begin{figure}[!ht]
   \centering
-  \subfigure[\projectA{} Details, $33$ work packages, $4$ resources and $33$ dependencies]{
+  \subfigure[\projectA{}'s Details, $33$ work packages, $4$ resources and $33$ dependencies]{
     \centering
     \label{fig:dag:a} 
-    \includegraphics[width=0.85\textwidth]{figures/a.eps}
+    \includegraphics[width=0.8\textwidth]{figures/a.eps}
   }
-  \subfigure[\projectB{} Details, $106$ work packages, $8$ resources and $105$ dependencies]{
+  \subfigure[\projectB{}'s Details, $106$ work packages, $8$ resources and $105$ dependencies]{
     \centering
     \label{fig:dag:b}
     \includegraphics[width=\textwidth]{figures/b.eps}
   }
-  \subfigure[\projectC{} Details, $74$ work packages, $14$ resources and $73$ dependencies]{
+  \subfigure[\projectC{}'s Details, $74$ work packages, $14$ resources and $73$ dependencies]{
     \centering
     \label{fig:dag:c}
     \includegraphics[width=\textwidth]{figures/c.eps}
@@ -86,30 +93,33 @@ in the evolutionary algorithm, we evaluate the each individuals' fitness value
 in the whole population, and then plot the statistical data into a boxplot
 diagram.
 
-
-\begin{figure}[!ht]
+% effectiveness experiment results
+\begin{figure}[!h]
   \centering
+
   \subfigure[\projectA{}'s solution converges on \emph{19th} generation]{
     \label{fig:pj:a} 
-    \includegraphics[width=0.8\textwidth]{figures/fig_pa1.eps}
+    \includegraphics[width=.75\textwidth]{figures/fig_pa1.eps}
   }
+
   \subfigure[\projectB{}'s solution converges on \emph{22rd} generation]{
     \label{fig:pj:b} 
-    \includegraphics[width=0.8\textwidth]{figures/fig_pa2.eps}
+    \includegraphics[width=.75\textwidth]{figures/fig_pa2.eps}
   }
+
   \subfigure[\projectC{}'s solution converges on \emph{15th} generation]{
     \label{fig:pj:c} 
-    \includegraphics[width=0.8\textwidth]{figures/fig_pa3.eps}
+    \includegraphics[width=0.75\textwidth]{figures/fig_pa3.eps}
   }
   \caption{Statistics of Fitness Value in Each Generation}
   \label{fig:pj}
 \end{figure}
 
-Each generation of the boxplot diagram shows the five statistical data of all
-individuals' fitness value in the whole population: the minimum, the lower
-quartile, the median, the upper quartile and the maximum. Boxplot about the
-above-mentioned three industrial projects is shown in figures \ref{fig:pj}.  In
-each sub-figure, the tick labels on the horizontal axis indicate the total
+Each generation of the boxplot diagram shows the five kinds of statistical data
+of all individuals' fitness value. They are the minimum, the lower quartile, the
+median, the upper quartile and the maximum of the whole population. Figure
+\ref{fig:pj} shows the results of the above-mentioned three industrial projects.
+In each sub-figure, the tick labels on the horizontal axis indicate the total
 number of internal generations that have been carried out, and also indicates
 the point at which the algorithm updated the population used for fitness
 computation. At each point on the horizontal axis, the entire population is
@@ -155,7 +165,7 @@ Microsoft Visual Studio 2012 C++ Compiler, CUDA 7.0.28 Runtime environment.
 %%   \end{tabular}
 %% \end{table}
 
-\begin{table}[!ht]
+\begin{table}[!h]
   \centering
   \caption{Three Projects' Calculation Time}
   \label{tab:consuming}
