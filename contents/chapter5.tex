@@ -88,15 +88,13 @@ certain types of resources that can be allocated to work packages.
 %
 In order to answer \textbf{RQ1}, this section designs a effectiveness experiment
 for evolutionary algorithm. The basic configuration used in the experiment is
-that \emph{100} individuals runs in \emph{50} generations. For each generation
-in the evolutionary algorithm, we evaluate the each individuals' fitness value
-in the whole population, and then plot the statistical data into a boxplot
-diagram.
+that $100$ individuals runs in $50$ generations. For each generation in the
+evolutionary algorithm, we evaluate the each individuals' fitness value in the
+whole population, and then plot the statistical data into a boxplot diagram.
 
 % effectiveness experiment results
 \begin{figure}[!h]
   \centering
-
   \subfigure[\projectA{}'s solution converges on \emph{19th} generation]{
     \label{fig:pj:a} 
     \includegraphics[width=.75\textwidth]{figures/fig_pa1.eps}
@@ -115,21 +113,27 @@ diagram.
   \label{fig:pj}
 \end{figure}
 
-Each generation of the boxplot diagram shows the five kinds of statistical data
-of all individuals' fitness value. They are the minimum, the lower quartile, the
-median, the upper quartile and the maximum of the whole population. Figure
-\ref{fig:pj} shows the results of the above-mentioned three industrial projects.
-In each sub-figure, the tick labels on the horizontal axis indicate the total
-number of internal generations that have been carried out, and also indicates
-the point at which the algorithm updated the population used for fitness
-computation. At each point on the horizontal axis, the entire population is
-depicted using a boxplot to give both a sense of the values obtained for
-completion time as the evolution progresses and the distribution of the fitness
-values in the population. From the trend of three projects, it can be seen that
-the population is diversified when the population is initialized and as the
-number of generation increase, all the fitness value begins to decrease, and
-finally converges to a optimized result.
+The boxplot diagram shows the five kinds of statistical data of all individuals'
+fitness value in each generation. The data are the minimum, the lower quartile,
+the median, the upper quartile and the maximum values of the whole
+population. Figure \ref{fig:pj} shows the results of the above-mentioned three
+industrial projects. In each sub-figure, the tick labels on the horizontal axis
+indicate the total number of internal generations that have been carried out,
+and also indicates the point at which the algorithm updated the population used
+for fitness computation. At each point on the horizontal axis, the entire
+population is depicted using a boxplot to give both a sense of the values
+obtained for completion time as the evolution progresses and the distribution of
+the fitness values in the population. From the trend of three projects in the
+figures, it can be seen that the population is diversified when the population
+is initialized and as the number of generation increase, all the fitness value
+begins to decrease, and finally converges to a optimized result.
 
+The convergence of solutions are quite fast and stable. Figure \ref{fig:pj:a}
+shows the solution of \projectA{} converges on 19th generation. Figure
+\ref{fig:pj:b} shows the solution of \projectB{} converges on 22rd generation.
+Figure \ref{fig:pj:c} shows the solution of \projectC{} converges on 15th
+generation. Those results show us evolutionary algorithm will find an optimized
+overall duration for specific project plan.
 
 Through the above analysis results of experimental data, we can accurately
 answer \textbf{RQ1}. In the project management problems, the evolutionary
@@ -145,10 +149,12 @@ sequential one.
 The hardware environment of this experiment is as follows: the runtime
 environment that execute the sequential evolutionary algorithm is the Intel i7
 series CPU (abbreviated as CPU). The runtime environment of the parallel
-evolutionary algorithm is the NVidia GeForce series GPU (abbreviated as GPU).
-CPU and GPU detailed configuration comparison see Table \ref{tab:cpugpu}. The
-software environment of this experiment is: Window 7 Ultimate Service Pack 1,
-Microsoft Visual Studio 2012 C++ Compiler, CUDA 7.0.28 Runtime environment.
+evolutionary algorithm is the NVidia GeForce GTX 970 (abbreviated as GPU). The
+CPU has 8 cores, and the GPU has 1664 cores. The software environment of this
+experiment is as follows: both sequential and parallel's experiment runs on
+Window 7 operating system. While the sequential programs runs on Microsoft
+Visual Studio 2012 C++ Compiler environment, the parallel one runs on CUDA
+7.0.28 Runtime environment.
 
 %% \begin{table}[!ht]
 %%   \centering
@@ -167,8 +173,8 @@ Microsoft Visual Studio 2012 C++ Compiler, CUDA 7.0.28 Runtime environment.
 
 \begin{table}[!h]
   \centering
-  \caption{Three Projects' Calculation Time}
-  \label{tab:consuming}
+  \caption{The Comparison of Sequential and Parallel Implementation}
+  \label{tab:time}
   \begin{tabular}{ccc|cc|cc}
     \hline
     & \multicolumn{2}{c}{ \projectA{} } & \multicolumn{2}{c}{ \projectB{} } & \multicolumn{2}{c}{ \projectC } \\
@@ -193,34 +199,41 @@ Microsoft Visual Studio 2012 C++ Compiler, CUDA 7.0.28 Runtime environment.
 
 
 The initial configuration of the two versions is the identical, which the number
-of population is 1000 and the number of generation is 100. Each generation
-includes crossover, mutation and selection. A timer is set to record the total
-time consuming of the algorithms. The timer starts after loading initial data
-and ends after the result is calculated. This allows us to count the total
-computational time both in the sequential environment and the parallel
-environment under the same criteria.
+of population is $1000$ and the number of generation is $100$. Each generation
+runs several steps including crossover, mutation and selection etc. A timer is
+set to record the total executing time of the experiments. The timer starts
+after loading initial data and ends after the result is calculated. This
+operation allows us to count the real executing time both in the sequential
+environment and the parallel environment under the same criteria.
+The efficiency experiments are repeated $10$ times.  The final result of
+\projectA{}, \projectB{} and \projectC{} are shown in figures \ref{fig:co}. It
+can be seen from the figures that the time-consuming of the sequential algorithm
+on CPU is roughly twice as long as the parallel algorithm on GPU.
+
+Table
+\ref{tab:time} shows the comparison of sequential and parallel implementation
+executing time on all three industrial projects.
 
 % comparison figures
 \begin{figure}[!hb]
   \centering
-  \subfigure[\projectA{}'s time spend on CPU is \emph{1.80} times than on GPU]{
+  \subfigure[\projectA{}'s executing time spend on CPU is \emph{1.80} times than GPU]{
     \label{fig:co:a}
     \includegraphics[width=0.8\textwidth]{figures/fig_co1.eps} }
-  \subfigure[\projectB{}'s time spend on CPU is \emph{2.10} times than on GPU]{
+  \subfigure[\projectB{}'s executing time spend on CPU is \emph{2.10} times than GPU]{
     \label{fig:co:b}
     \includegraphics[width=0.8\textwidth]{figures/fig_co2.eps} }
-  \subfigure[\projectC{}'s time spend on CPU is \emph{2.00} times that on GPU]{
+  \subfigure[\projectC{}'s Executing Time on CPU is \emph{2.00} times than that on GPU]{
     \label{fig:co:c}
     \includegraphics[width=0.8\textwidth]{figures/fig_co3.eps}
   }
-  \caption{Calculation Time Comparison of \emph{CPU} and \emph{GPU}}
+  \caption{Executing Time Comparison of \emph{CPU} and \emph{GPU} Implementation}
   \label{fig:co}
 \end{figure}
 
-The efficiency experiments are repeated $10$ times.  The final result of
-\projectA{}, \projectB{} and \projectC{} are shown in figures \ref{fig:co}. It
-can be seen from the figures that the time-consuming of the sequential algorithm
-on CPU is roughly twice as long as the parallel algorithm on GPU. So it can be a
+
+
+So it can be a
 good answer to \textbf{RQ2} that parallel evolutionary algorithm can improve the
 efficiency on computing the project management problems.
 
