@@ -169,4 +169,22 @@ time-consuming work on GPU. The steps of crossover, mutation and evolution runs
 in different cores in GPU so that the speed of calculation can be impoved a lot.
 
 
+\subsection{Runtime Environment}
+%
+Both sequential and parallel's application is implemented on Window 7 operating
+system.
+
+The hardware environment of algorithm implementation is as follows: the runtime
+processor that executes the sequential evolutionary algorithm is the Intel i7
+series CPU (abbreviated as CPU). The runtime processor of the parallel
+evolutionary algorithm is the NVidia GeForce GTX 970 (abbreviated as GPU). The
+major difference between CPU and GPU is that they have different number of
+computation cores. Normally, the computation speed of a GPU core is lower than a
+CPU core. But GPU has far more than the number of CPU cores. In this paper, The
+CPU we used has 8 cores and the GPU has 1664 cores.
+
+The software environment that runs application is as follows: the sequential
+programs runs on Microsoft Visual Studio 2012 C++ Compiler environment, the
+parallel one runs on CUDA 7.0.28 Runtime environment. Both sequential and
+parallel application is evaluated in the same computer.
 
