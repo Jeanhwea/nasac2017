@@ -11,8 +11,8 @@
 To assess the evolutionary algorithm proposed in this paper, two separated
 evaluation experiments are made for the effectiveness of evolutionary algorithm
 and the efficiency of parallel evolutionary algorithm in project management
-problem. The purpose of the experiment is to answer the following two research
-questions:
+problem. The purpose of the experiment is to addresses the following two
+research questions:
 
 \textbf{RQ1}: Does the evolutionary algorithm effectively optimize project
 management problem, and get an optimized solution?
@@ -23,48 +23,20 @@ efficiency in the project management problem?
 
 \subsection{Industrial Project Data}
 %
-The experimental data evaluated in this paper are real industrial project
-management plans.
-
-
-A total number of three sets of industrial data have been used in the empirical
-studies for this paper, which are named as \projectA{}, \projectB{} and
-\projectC{}. These data come form real world projects and have fundamental
-details such as: number of work packages, required skills and staff.  Figure
-\ref{fig:dag} shows the dependency graph that illustrates the dependencies among
-WPS, resource and efforts required by each WPS, and critical path of each
-project. \projectA{} is a simulated medium-scale project planning. The goal of
-\projectB{} is to upgrade the Oracle database from the \emph{9g} version to the
-\emph{10g} version, which is Oracle's non-public version of the project
-planning. There were different layers of the organisation involved including
-DBAs, BSAs, developers and users.  Furthermore, the project also included the
-training of the staff for the new features of the system.  \projectC{} consists
-of a supply chain enhancement of medium size affecting mostly the website as
-well as a few internal applications \cite{ren2}. The details of the projects is
-shown in Table \ref{tab:statis}.
-
-
-\begin{figure}[!ht]
-  \centering
-  \subfigure[\projectA{}]{
-    \centering
-    \label{fig:dag:a} 
-    \includegraphics[width=0.85\textwidth]{figures/a.eps}
-  }
-  \subfigure[\projectB{}]{
-    \centering
-    \label{fig:dag:b}
-    \includegraphics[width=\textwidth]{figures/b.eps}
-  }
-  \subfigure[\projectC{}]{
-    \centering
-    \label{fig:dag:c}
-    \includegraphics[width=\textwidth]{figures/c.eps}
-  }
-  \caption{Three Projects' \emph{work packages}, \emph{resources} and \emph{dependencies}}
-  \label{fig:dag}
-\end{figure}
-
+Three industrial project plans have been used in the experimental studies for
+this paper, which are named as \projectA{}, \projectB{} and \projectC{}. These
+data come from real world projects and have fundamental details such as: number
+of work packages, required skills and staff.  Figure \ref{fig:dag} shows the
+dependencies among work packages, resources and duration of each work
+packages. \projectA{} is a simulated medium-scale project planning. \projectB{}
+is a real software development plan, which's goal is to upgrade the Oracle
+database from the \emph{9g} version to the \emph{10g} version. \projectB{} is
+Oracle's non-public version of the project planning. There were different layers
+of the organisation involved including DBAs, BSAs, developers and users.
+Furthermore, the project also included the training of the staff for the new
+features of the system. \projectC{} consists of a supply chain enhancement of
+medium size affecting mostly the website as well as a few internal applications
+\cite{ren2}. The details of the projects is shown in Table \ref{tab:statis}.
 % 
 \begin{table}[!ht]
   \centering
@@ -82,23 +54,38 @@ shown in Table \ref{tab:statis}.
 \end{table}
 
 
+
+\begin{figure}[!ht]
+  \centering
+  \subfigure[\projectA{} Details, $33$ work packages, $4$ resources and $33$ dependencies]{
+    \centering
+    \label{fig:dag:a} 
+    \includegraphics[width=0.85\textwidth]{figures/a.eps}
+  }
+  \subfigure[\projectB{} Details, $106$ work packages, $8$ resources and $105$ dependencies]{
+    \centering
+    \label{fig:dag:b}
+    \includegraphics[width=\textwidth]{figures/b.eps}
+  }
+  \subfigure[\projectC{} Details, $74$ work packages, $14$ resources and $73$ dependencies]{
+    \centering
+    \label{fig:dag:c}
+    \includegraphics[width=\textwidth]{figures/c.eps}
+  }
+  \caption{Three Projects' \emph{work packages}, \emph{resources} and \emph{dependencies}}
+  \label{fig:dag}
+\end{figure}
+
+
 \subsection{Effectiveness Experiment for Algorithm}
 %
 In order to answer \textbf{RQ1}, this section designs a effectiveness experiment
 for evolutionary algorithm. The basic configuration used in the experiment is
 that \emph{100} individuals runs in \emph{50} generations. For each generation
-in the evolutionary algorithm, we counts the each individuals' fitness value in
-the whole population, and then plot the statistical data into a boxplot diagram.
+in the evolutionary algorithm, we evaluate the each individuals' fitness value
+in the whole population, and then plot the statistical data into a boxplot
+diagram.
 
-
-Each generation of the boxplot shows the five statistical data of all
-individuals' fitness value in the whole population: the minimum, the lower
-quartile, the median, the upper quartile and the maximum. Boxplot about the
-above-mentioned three industrial projects is shown in figures \ref{fig:pj}. From
-the trend of three projects, it can be seen that the population is diversified
-when the population is initialized. As the number of generation increase, all
-the fitness value begins to decrease, and finally converges to a optimized
-result.
 
 \begin{figure}[!ht]
   \centering
@@ -117,6 +104,21 @@ result.
   \caption{Statistics of Fitness Value in Each Generation}
   \label{fig:pj}
 \end{figure}
+
+Each generation of the boxplot diagram shows the five statistical data of all
+individuals' fitness value in the whole population: the minimum, the lower
+quartile, the median, the upper quartile and the maximum. Boxplot about the
+above-mentioned three industrial projects is shown in figures \ref{fig:pj}.  In
+each sub-figure, the tick labels on the horizontal axis indicate the total
+number of internal generations that have been carried out, and also indicates
+the point at which the algorithm updated the population used for fitness
+computation. At each point on the horizontal axis, the entire population is
+depicted using a boxplot to give both a sense of the values obtained for
+completion time as the evolution progresses and the distribution of the fitness
+values in the population. From the trend of three projects, it can be seen that
+the population is diversified when the population is initialized and as the
+number of generation increase, all the fitness value begins to decrease, and
+finally converges to a optimized result.
 
 
 Through the above analysis results of experimental data, we can accurately
