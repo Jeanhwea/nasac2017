@@ -5,29 +5,30 @@
 \section{Design of Algorithm}
 %
 This paper aims to solve above-mentioned project management problem by using
-evolutionary algorithm.
-
-% this is a figure 6
-% figure 2
-\begin{figure}[!ht]
-  \centering
-  \includegraphics[width=0.8\textwidth]{figures/simu.pdf}
-  \caption{Project Plan of Software Development}
-  \label{fig:simu}
-\end{figure}
+evolutionary algorithm. There are two important steps in using the evolutionary
+algorithm. One is to choose the representation of the problem's solution, the
+other is to define a appropriate fitness function. In the process of project
+management, the work
 
 
-There are two important steps in using the evolutionary algorithm. One is to
-choose the representation of the problem's solution, the other is to define a
-appropriate fitness function. In the process of project management, the work
-packages in the project are allocated by simulation. See figure \ref{fig:simu},
-Firstly, the whole project is decomposed into several work packages by
-\emph{work breakdown structure}, and those work packages are arranged into a
-corresponding \emph{work package sequence}. Secondly, according to the
-dependencies of the work packages and the restriction of resource, each kinds of
-resources is allocated to the corresponding work package by
-\emph{first-come-first-served} algorithm. Finally, the project's overall
-duration is calculate by simulation.
+%% \begin{figure}[!ht]
+%%   \centering
+%%   \includegraphics[width=0.8\textwidth]{figures/simu.pdf}
+%%   \caption{Project Plan of Software Development}
+%%   \label{fig:simu}
+%% \end{figure}
+
+%% There are two important steps in using the evolutionary algorithm. One is to
+%% choose the representation of the problem's solution, the other is to define a
+%% appropriate fitness function. In the process of project management, the work
+%% packages in the project are allocated by simulation. See figure \ref{fig:simu},
+%% Firstly, the whole project is decomposed into several work packages by
+%% \emph{work breakdown structure}, and those work packages are arranged into a
+%% corresponding \emph{work package sequence}. Secondly, according to the
+%% dependencies of the work packages and the restriction of resource, each kinds of
+%% resources is allocated to the corresponding work package by
+%% \emph{first-come-first-served} algorithm. Finally, the project's overall
+%% duration is calculate by simulation.
 
 
 \subsection{The Representation of Solution}
@@ -136,7 +137,7 @@ algorithm.
 \begin{figure}[!ht]
   \centering
   % fisrt figure
-  \begin{minipage}{0.40\textwidth}
+  \begin{minipage}{0.29\textwidth}
     \centering
     \subfigure[Sequential] {
       \label{fig:flow:s}

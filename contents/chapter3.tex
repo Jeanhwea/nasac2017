@@ -12,7 +12,7 @@ allocation.
 % figure 2
 \begin{figure}[!ht]
   \centering
-  \includegraphics[width=0.8\textwidth]{figures/pm_sample.jpg}
+  \includegraphics[width=0.9\textwidth]{figures/pm_sample.jpg}
   \caption{Project Plan of Software Development}
   \label{fig:sample}
 \end{figure}
@@ -30,6 +30,26 @@ completed while some work packages can be done at the same time, and there is no
 impact on each other, such as software development and software testing can
 often be synchronized.  The goal of project manager is using the shortest time
 to complete each work package during the duration of the software project.
+
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/simu.pdf}
+  \caption{Project Plan of Software Development}
+  \label{fig:simu}
+\end{figure}
+
+
+
+ In the process of project management, the work packages in the project are
+ allocated by simulation. See figure \ref{fig:simu}, Firstly, the whole project
+ is decomposed into several work packages by \emph{work breakdown structure},
+ and those work packages are arranged into a corresponding \emph{work package
+   sequence}. Secondly, according to the dependencies of the work packages and
+ the restriction of resource, each kinds of resources is allocated to the
+ corresponding work package by \emph{first-come-first-served}
+ algorithm. Finally, the project's overall duration is calculate by simulation.
+
 
 
 \subsection{Definition and Assumptions}
@@ -116,9 +136,8 @@ last work package of the project is completed, the entire project ends.
 
 The objective is defined as following:
 
-\textbf{Objective}:
 \begin{equation}
-  min(f(S)) = min(max\{t.end \mid t \in T\})
+  \text{\textbf{Objective:}    } min(f(S)) = min(max\{t.end \mid t \in T\})
 \end{equation}
 
 
