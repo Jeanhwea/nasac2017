@@ -9,14 +9,13 @@
 \section{Experimental Results}
 %
 To assess the evolutionary algorithm proposed in this paper, two separated
-evaluation experiments are made for the efficiency of parallel evolutionary
-algorithm and the validity of evolutionary algorithm in project management
+evaluation experiments are made for the effectiveness of evolutionary algorithm
+and the efficiency of parallel evolutionary algorithm in project management
 problem. The purpose of the experiment is to answer the following two research
 questions:
 
-
 \textbf{RQ1}: Does the evolutionary algorithm effectively optimize project
-management problem, and get an optimized answer?
+management problem, and get an optimized solution?
 
 \textbf{RQ2}: Is the parallel evolutionary algorithm able to improve the
 efficiency in the project management problem?
@@ -30,10 +29,10 @@ management plans.
 
 A total number of three sets of industrial data have been used in the empirical
 studies for this paper, which are named as \projectA{}, \projectB{} and
-\projectC{}. These data come form real world peogects and have fundamental
-details such as: number of work packages, required skills and staff.  Figure 4
-shows the dependency graph that visualises the interdependency among WPS,
-resource and efforts required by each WPS, and critical path of each
+\projectC{}. These data come form real world projects and have fundamental
+details such as: number of work packages, required skills and staff.  Figure
+\ref{fig:dag} shows the dependency graph that illustrates the dependencies among
+WPS, resource and efforts required by each WPS, and critical path of each
 project. \projectA{} is a simulated medium-scale project planning. The goal of
 \projectB{} is to upgrade the Oracle database from the \emph{9g} version to the
 \emph{10g} version, which is Oracle's non-public version of the project
@@ -41,10 +40,10 @@ planning. There were different layers of the organisation involved including
 DBAs, BSAs, developers and users.  Furthermore, the project also included the
 training of the staff for the new features of the system.  \projectC{} consists
 of a supply chain enhancement of medium size affecting mostly the website as
-well as a few internal applications. \cite{ren}.  The configuration of the
-projects is shown in Table \ref{tab:statis}.
+well as a few internal applications \cite{ren2}. The details of the projects is
+shown in Table \ref{tab:statis}.
 
-\begin{figure}[!hb]
+\begin{figure}[!ht]
   \centering
   \subfigure[\projectA{}]{
     \centering
@@ -64,7 +63,6 @@ projects is shown in Table \ref{tab:statis}.
   \caption{Three Projects' \emph{work packages}, \emph{resources} and \emph{dependencies}}
   \label{fig:dag}
 \end{figure}
-
 
 % 
 \begin{table}[!ht]
@@ -174,6 +172,7 @@ Microsoft Visual Studio 2012 C++ Compiler, CUDA 7.0.28 Runtime environment.
      8    & 7470.7 & 4226.4 & 45322.8 & 21147.1 & 31231.7 & 14811.1 \\
      9    & 7604.8 & 3778.2 & 45040.7 & 21004.7 & 28319.7 & 14292.0 \\
      10   & 7451.9 & 4712.4 & 45970.6 & 21500.9 & 28322.1 & 14429.7 \\
+    \hline
      Avg. & 7689.8 & 4268.2 & 45126.0 & 21399.7 & 29225.1 & 14643.1 \\
     \hline
   \end{tabular}
