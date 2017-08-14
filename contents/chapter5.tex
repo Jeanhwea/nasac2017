@@ -1,3 +1,4 @@
+% !TEX root = ../paper.tex
 %
 % ---------- chapter 5 ----------
 %
@@ -6,8 +7,9 @@
 \newcommand{\projectB}[0]{\emph{B-DBUpgrade}}
 \newcommand{\projectC}[0]{\emph{C-SmartPrice}}
 
+  \vspace{-2mm}
 \section{Experimental Results}
-%
+  \vspace{-2mm}
 To assess the evolutionary algorithm proposed in this paper, two separated
 evaluation experiments are made for the effectiveness of evolutionary algorithm
 and the efficiency of parallel evolutionary algorithm in project management
@@ -20,7 +22,7 @@ management problem, and get an optimized solution?
 \textbf{RQ2}: Is the parallel evolutionary algorithm able to improve the
 efficiency in the project management problem?
 
-
+  \vspace{-2mm}
 \subsection{Industrial Project Data}
 %
 Three industrial project plans have been used in the experimental studies for
@@ -31,8 +33,10 @@ each project.
 
 % 
 \begin{table}[!h]
+\vspace{-6mm}
   \centering
   \caption{Three Project's Parameters}
+        \vspace{-2mm}
   \label{tab:statis}
   \begin{tabular}{lccc}
     \hline
@@ -43,6 +47,7 @@ each project.
     \projectC{} & 74  & 14 & 73  \\
     \hline
   \end{tabular}
+  \vspace{-6mm}
 \end{table}
 
 \projectA{} is a simulated small-scale project planning. it is a team work plan
@@ -64,23 +69,25 @@ certain types of resources that can be allocated to work packages.
 
 \begin{figure}[!ht]
   \centering
-  \subfigure[\projectA{}'s Details, $33$ work packages, $4$ resources and $33$ dependencies]{
+  \subfigure[\projectA{}, $33$ work packages, $4$ resources and $33$ dependencies]{
     \centering
     \label{fig:dag:a} 
-    \includegraphics[width=0.8\textwidth]{figures/a.eps}
+    \includegraphics[width=0.75\textwidth]{figures/a.eps}
   }
-  \subfigure[\projectB{}'s Details, $106$ work packages, $8$ resources and $105$ dependencies]{
+  \subfigure[\projectB{}: $106$ work packages, $8$ resources and $105$ dependencies]{
     \centering
     \label{fig:dag:b}
     \includegraphics[width=\textwidth]{figures/b.eps}
   }
-  \subfigure[\projectC{}'s Details, $74$ work packages, $14$ resources and $73$ dependencies]{
+  \subfigure[\projectC{}:, $74$ work packages, $14$ resources and $73$ dependencies]{
     \centering
     \label{fig:dag:c}
     \includegraphics[width=\textwidth]{figures/c.eps}
   }
+        \vspace{-5mm}
   \caption{Three Projects' \emph{work packages}, \emph{resources} and \emph{dependencies}}
   \label{fig:dag}
+  \vspace{-5mm}
 \end{figure}
 
 
@@ -95,22 +102,24 @@ whole population, and then plot the statistical data into a boxplot diagram.
 % effectiveness experiment results
 \begin{figure}[!h]
   \centering
+        \vspace{-2mm}
   \subfigure[\projectA{}'s solution converges on \emph{19th} generation]{
     \label{fig:pj:a} 
     \includegraphics[width=.7\textwidth]{figures/fig_pa1.eps}
   }
-
+      \vspace{-2mm}
   \subfigure[\projectB{}'s solution converges on \emph{22rd} generation]{
     \label{fig:pj:b} 
     \includegraphics[width=.7\textwidth]{figures/fig_pa2.eps}
   }
-
+        \vspace{-2mm}
   \subfigure[\projectC{}'s solution converges on \emph{15th} generation]{
     \label{fig:pj:c} 
     \includegraphics[width=0.7\textwidth]{figures/fig_pa3.eps}
   }
   \caption{Statistics of Fitness Value in Each Generation}
   \label{fig:pj}
+  \vspace{-8mm}
 \end{figure}
 
 The boxplot diagram shows the five kinds of statistical data of all individuals'
@@ -162,8 +171,10 @@ sequential one.
 %% \end{table}
 
 \begin{table}[!h]
+\vspace{-7mm}
   \centering
   \caption{The Comparison of Sequential and Parallel Implementation}
+  \vspace{-3mm}
   \label{tab:time}
   \begin{tabular}{ccc|cc|cc}
     \hline
@@ -185,6 +196,7 @@ sequential one.
      Avg. & 7689.8 & 4268.2 & 45126.0 & 21399.7 & 29225.1 & 14643.1 \\
     \hline
   \end{tabular}
+  \vspace{-7mm}
 \end{table}
 
 
