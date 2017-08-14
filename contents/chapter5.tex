@@ -45,7 +45,7 @@ each project.
   \end{tabular}
 \end{table}
 
-\projectA{} is a simulated small-scale project planning, it is a team work plan
+\projectA{} is a simulated small-scale project planning. it is a team work plan
 for finishing class assignments. \projectB{} is a real software development
 plan, which's goal is to upgrade the Oracle database from the \emph{9g} version
 to the \emph{10g} version. \projectB{} is Oracle's non-public version of the
@@ -86,10 +86,10 @@ certain types of resources that can be allocated to work packages.
 
 \subsection{Effectiveness Experiment for Algorithm}
 %
-In order to answer \textbf{RQ1}, this section designs a effectiveness experiment
+In order to answer \textbf{RQ1}, this section designs an effectiveness experiment
 for evolutionary algorithm. The basic configuration used in the experiment is
 that $100$ individuals runs in $50$ generations. For each generation in the
-evolutionary algorithm, we evaluate the each individuals' fitness value in the
+evolutionary algorithm, we evaluate each individuals' fitness value in the
 whole population, and then plot the statistical data into a boxplot diagram.
 
 % effectiveness experiment results
@@ -126,9 +126,9 @@ obtained for completion time as the evolution progresses and the distribution of
 the fitness values in the population. From the trend of three projects in the
 figures, it can be seen that the population is diversified when the population
 is initialized and as the number of generation increase, all the fitness value
-begins to decrease, and finally converges to a optimized result.
+begins to decrease, and finally converges to an optimized result.
 
-The convergence of solutions are quite fast and stable. Figure \ref{fig:pj:a}
+The convergence of solutions is quite fast and stable. Figure \ref{fig:pj:a}
 shows the solution of \projectA{} converges on 19th generation. Figure
 \ref{fig:pj:b} shows the solution of \projectB{} converges on 22rd generation.
 Figure \ref{fig:pj:c} shows the solution of \projectC{} converges on 15th
@@ -145,17 +145,6 @@ algorithm does have a good optimization and improvement.
 In order to answer \textbf{RQ2}, this section conducts an efficiency experiment
 that compares the efficiency between the parallel evolutionary algorithm and the
 sequential one.
-
-The hardware environment of this experiment is as follows: the runtime
-environment that execute the sequential evolutionary algorithm is the Intel i7
-series CPU (abbreviated as CPU). The runtime environment of the parallel
-evolutionary algorithm is the NVidia GeForce GTX 970 (abbreviated as GPU).  The
-major difference between CPU and GPU is that they have different number of
-calculation cores. The CPU has 8 cores while the GPU has 1664 cores. The
-software environment of this experiment is as follows: both sequential and
-parallel's experiment runs on Window 7 operating system. While the sequential
-programs runs on Microsoft Visual Studio 2012 C++ Compiler environment, the
-parallel one runs on CUDA 7.0.28 Runtime environment.
 
 %% \begin{table}[!ht]
 %%   \centering
