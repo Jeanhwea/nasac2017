@@ -1,19 +1,17 @@
 % !TEX root = ../paper.tex
 %% chapter 6
+%\vspace{-6mm}
 
+%\vspace{-3mm}
 \section{Related Works}
-%
+%\vspace{-3mm}
+
 In 1993, Chang et al.~\cite{chang} first proposed the project management problem. The view of 
 Chang is that software project management net(SPM-Net) can be used to 
 schedule tasks and manage the resources of software development. 
 In his article, Chang's project management problem is based on the simulative 
 data, the reason leading to this is the real industrial data of software 
-project management is very scanty. In 2002, Aguilar-Ruiz et al.~\cite{alba} made a 
-further research on simulated software project data and proposed search-based 
-method to solve project management problem. They proposed 
-simulation arrangement for the work package to provide a plan that project 
-managers can follow to arrange tasks. Like Chang’s work, Aguilar-Ruiz's work 
-is also based on simulative data. In 2007, Alba and Chicano optimized the 
+project management is very scanty. In 2007, Alba and Chicano~\cite{alba} optimized the 
 search algorithms for project management, and solve the project management 
 problem using genetic algorithm. Their goal is using a search-based approach 
 to reduce the final completion duration of a project. In 2009, Ren et al.~\cite{ren} first 
@@ -34,8 +32,7 @@ based project management problem is also rising, which makes many researchers
 willing to engage in search-based project management problem, so in turn 
 provides a new platform for practice and innovation of the search-based 
 project management problem~\cite{penta}.
-
-
+In 2014, Samanta~\cite{samanta} gone through a very brief idea on Genetic Algorithm and implemented the algorithm using MATLAB.
 The search-based algorithm is a compute-intensive method, which means the
 computer's CPU will be used usually consumed a lot. Therefore, the traditional
 sequential computing model cannot meet the requirement of increasing calculation
@@ -48,16 +45,15 @@ been used to solve project management problem, and these methods are usually
 able to get good convergence solution on project management problem.
 
 As the development of the algorithm, how to speed up the calculation of the algorithm
-has become a hot spot in academic community. Nowsdays,  A general-purpose GPU(GPGPU) is uesd 
+has become a hot spot in academic community.
+In general, the parallel evolution algorithm can be implemented on the GPU platform using the CUDA~\cite{vidal}. With the development of the technology of parallelism, a general-purpose GPU(GPGPU) is used 
 to improve the speed of calculation in software engineering. In 2012, Zhang et al.~\cite{zhang} apply GPGPU to
-simulation for complex scenes and proposed a GPU-based parallel MOEAs~\cite{li}.
+simulation for complex scenes and later on they proposed a GPU-based parallel MOEAs~\cite{li}.
 CUDA is a generic parallel computing architecture developed by NVIDIA, which can be used to improve the performance of GPGPU~\cite{langdon2} and also can be optimized by meta-heuristic algorithms~\cite{langdon1}.
 
 
 %\textbf{THIS PARAGRAPH TALK TO TOOL, TO BE DELETED???}
-At present, for project management problem, scholars usually establish the
-mathematical model, and then start their research and optimization on the
-pre-defined model. In general, a common project management tool which deal with
+In general, a common project management tool which deal with
 the mathematical models have not been implemented, so it is difficult to apply
 the theory to the industrial project management process. In 2012, Stylianou~\cite{stylianou} and
 Gerasimou first developed a tool for project management, which they named

@@ -1,11 +1,11 @@
+% !TEX root = ../paper.tex
 %
 % ---------- chapter 4 ----------
 %
 
 \section{Design of Algorithm}
 %
-This paper aims to solve above-mentioned project management problem by using
-evolutionary algorithm. There are two important steps in using the evolutionary
+This section introduces the two important steps in using the evolutionary
 algorithm. One is to choose the representation of the problem's solution, the
 other is to define a appropriate fitness function.
 
@@ -28,52 +28,46 @@ other is to define a appropriate fitness function.
 %% \emph{first-come-first-served} algorithm. Finally, the project's overall
 %% duration is calculate by simulation.
 
-
+  \vspace{-2mm}
 \subsection{The Representation of Solution}
-%
+  \vspace{-2mm}%
 For the above-mentioned problem, the representation of solution is defined as
 follows.
-
-
 This paper uses \emph{work package sequence} (hereinafter referred to as \emph{WPS}) to
 represent a solution of project management problem. The representation of such a
 solution is actually a priority arrangement sequence of the work packages in
 the whole project, and the number of solutions for a project containing the $N$
 work packages is $N!$, which is large enough to do random search.
-
 %This is a figure 7
 \begin{equation}
   T_1 \rightarrow T_5 \rightarrow T_6 \rightarrow T_4 \rightarrow T_8
   \rightarrow T_3 \rightarrow T_9 \rightarrow T_2 \rightarrow T_7
   \label{repr}
 \end{equation}
-
 For example, equation (\ref{repr}) is solution, the solution represents the work
 package sequence in the priority of $T_1$, $T_5$, $T_6$, $T_4$, $T_8$, $T_3$,
 $T_9$, $T_2$, $T_7$, while arranging the work packages. This representation is
 beneficial and intuitive to programming.
 
-
+  \vspace{-2mm}
 \subsection{Fitness Evaluation}
-%
-The above-mentioned representation of solution make each individual coded as
+ \vspace{-2mm}
+The above-mentioned representation of solution make each individual encoded as
 \emph{WPS}. The fitness value of \emph{WPS} is the project's overall duration,
 which is calculated by simulating the assignment of work packages in the set of
 package sequence, see equation (\ref{wps}).
 
-For each \emph{WPS}, the algorithm to calculate corresponding project overall
-duration is as follows. Firstly, according to first-come-first-served (FCFS)
+The Algorithm~\ref{alg} illustrates  how to calculate corresponding project overall
+duration. Firstly, according to first-come-first-served
 rule, the front work packages in a \emph{WPS} have high priority to get
 resources, the back work packages has low priority. Secondly, the $TR$ function
 defines which work package can get which resources, if two work packages that
 require the same resources, the higher priority one will use the resources
 firstly, the lower priority one will use the resources after the higher one
 releases the resources. Finally, the project's overall duration is the last end
-time after all work packages are allocated the resources (see algorithm
-\ref{alg}).
+time after all work packages are allocated the resources.
 
-
-\begin{algorithm}
+\begin{algorithm}[!h]
   \caption{Fitness Evaluation Algorithm}
   \label{alg}
   \begin{algorithmic}
@@ -102,36 +96,63 @@ time after all work packages are allocated the resources (see algorithm
     \ENDFOR
   \end{algorithmic}
 \end{algorithm}
-
+%\vspace{-10mm}
+  \vspace{-2mm}
 \subsection{Genetic Operators}
 %
 
 There are two main types of operators in evolutionary algorithms:
 \emph{crossover} and \emph{mutation}.
-
-\subsubsection{Crossover}
+\textbf{Crossover}
 In evolutionary algorithms, crossover is a genetic operator used to vary the
 programming of a chromosome or chromosomes from one generation to the next.  In
 this paper, we use a two-point crossover, that is, two points are selected
 randomly on the parent organism strings. Everything between the two points is
 swapped between the parent organisms, rendering two child organisms then
 exchange corresponding part of chromosomes to get offspring individual.
-
-
-\subsubsection{Mutation}
+\textbf{Mutation}
 In evolutionary algorithms, Mutation is a genetic operator used to maintain
 genetic diversity from one generation of a population of genetic algorithm
 chromosomes to the next.  In this paper, we use two-point exchange mutation,
 that is, two points is selected randomly on individual organisms strings, and
 then exchange the two points.
 
-
+  \vspace{-6mm}
 \subsection{Parallel Evolutionary Algorithm}
 %
 Figure \ref{fig:flow} summarizes the basic process of the evolutionary
 algorithm.
+Figure \ref{fig:flow:s} is common sequential evolutionary algorithm, the
+algorithm has several steps, such as initialization, crossover, mutation, and
+selection. Candidate solutions to the optimization problem play the role of
+individuals in a population, and the fitness function determines the convergence
+of the solutions. Evolution of the population then takes place after the
+repeated application of the above operators.
+Figure \ref{fig:flow:p} illustrates a parallel evolutionary algorithm. The
+parallel one follows most steps in sequential one, but put the top
+time-consuming work on GPU. The steps of crossover, mutation and evolution runs
+in different cores in GPU so that the speed of calculation can be improved a lot.
 
+  \vspace{-2mm}
+\subsection{Runtime Environment}
+%
+%Both sequential and parallel's application is implemented on Window 7 operating system.
 
+The hardware environment of algorithm implementation is as follows: the runtime
+processor that executes the sequential evolutionary algorithm is the Intel i7
+series CPU (abbreviated as CPU). The runtime processor of the parallel
+evolutionary algorithm is the NVidia GeForce GTX 970 (abbreviated as GPU). The
+major difference between CPU and GPU is that they have different number of
+computation cores. Normally, the computation speed of a GPU core is lower than a
+CPU core. But GPU has far more than the number of CPU cores. In this paper, The
+CPU we used has 8 cores and the GPU has 1664 cores.
+
+The software environment that runs application is as follows: the sequential
+programs runs on Microsoft Visual Studio 2012 C++ Compiler environment, the
+parallel one runs on CUDA 7.0.28 Runtime environment. Both sequential and
+parallel application is evaluated in the same computer.
+
+\vspace{-6mm}
 \begin{figure}[!ht]
   \centering
   % fisrt figure
@@ -150,41 +171,9 @@ algorithm.
       \includegraphics[width=\textwidth]{figures/ea2_flow.pdf}
     }
   \end{minipage}
+        \vspace{-2mm}
   \caption{Sequential and Parallel Evolutionary Algorithm}
-  \label{fig:flow}
+    \vspace{-7mm}
+    \label{fig:flow}
 \end{figure}
-
-
-Figure \ref{fig:flow:s} is common sequenctial evolutionary algorithm, the
-algorithm has several steps, such as initialization, crossover, mutation, and
-selection. Candidate solutions to the optimization problem play the role of
-individuals in a population, and the fitness function determines the convergence
-of the solutions. Evolution of the population then takes place after the
-repeated application of the above operators.
-
-
-Figure \ref{fig:flow:p} illustrates a parallel evolutionary algorithm. The
-parallel one follows most steps in sequenctial one, but put the top
-time-consuming work on GPU. The steps of crossover, mutation and evolution runs
-in different cores in GPU so that the speed of calculation can be impoved a lot.
-
-
-\subsection{Runtime Environment}
-%
-Both sequential and parallel's application is implemented on Window 7 operating
-system.
-
-The hardware environment of algorithm implementation is as follows: the runtime
-processor that executes the sequential evolutionary algorithm is the Intel i7
-series CPU (abbreviated as CPU). The runtime processor of the parallel
-evolutionary algorithm is the NVidia GeForce GTX 970 (abbreviated as GPU). The
-major difference between CPU and GPU is that they have different number of
-computation cores. Normally, the computation speed of a GPU core is lower than a
-CPU core. But GPU has far more than the number of CPU cores. In this paper, The
-CPU we used has 8 cores and the GPU has 1664 cores.
-
-The software environment that runs application is as follows: the sequential
-programs runs on Microsoft Visual Studio 2012 C++ Compiler environment, the
-parallel one runs on CUDA 7.0.28 Runtime environment. Both sequential and
-parallel application is evaluated in the same computer.
-
+%\vspace{-10mm}

@@ -1,8 +1,7 @@
 % !TEX root = ../paper.tex
 %% chapter 1
-
 \section{Introduction}
-
+\vspace{-2mm}
 %\subsection{Background}
 %
 %In our daily life, each of us are facing many tasks. How to properly arrange those tasks is an emerging research topic in academia. 
@@ -22,13 +21,13 @@ Excellent project managers can  shorten the overall duration by arranging the or
 
 However, an automatic method to properly arrange the entire software project management process is still lacking. 
 We target at two typical difficulties preventing automatic techniques to be realized into a real world project: 
-1) the complexity of the problem model causes difficulties when a project manger is formalizing the problem he\slash she is facing, 
+1) the complexity of the problem model causes difficulties when a project manager is formalizing the problem he\slash she is facing, 
 2) the execution time of the optimization process is quite often unbearable comparing to the result it yields. 
 
 In this paper, we introduce a framework to deploy a conventional evolutionary algorithm to solve the work package scheduling problem as a single objective optimization problem. 
 And by catering the most computation intensive portion of algorithm to run on a parallel manner, this framework speeds up the execution of optimization process significantly.
 With an empirical study on three real world software project data, we show how this framework can ease above mentioned two typical problems that most of the existing optimization techniques to project management are facing.
-We claim that heuristics provides mangers with intuitive features towards ``simple-to-deploy'', and paralleled computation running on GPU provides faster execution time.
+We claim that heuristics provides mangers with intuitive features towards ``simple-to-deploy'', and parallel computation running on GPU provides faster execution time.
 
 The main purpose of this paper is to push forward the automated software project management powered by the search-based approach, which is an important component of search-based software engineering (SBSE) and also a future development trend of software engineering project management in the era of big data and parallel computing.
 
