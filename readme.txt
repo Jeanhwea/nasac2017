@@ -1,3 +1,9 @@
+To compile this paper, using command below:
+
+xelatex paper.tex
+
+
+---------------------------------------- original ----------------------------------------
 Dear LLNCS user,
 
 The files in this directory belong to the LaTeX2e package for
