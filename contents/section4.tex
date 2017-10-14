@@ -66,6 +66,9 @@ require the same resources, the higher priority one will use the resources
 firstly, the lower priority one will use the resources after the higher one
 releases the resources. Finally, the project's overall duration is the last end
 time after all work packages are allocated the resources.
+As we can see from the Algorithm~\ref{alg}, to calculate the overall duration,
+the algorithm must traverse all $N$ work packages and $M$ kinds of resources,
+so the average complexity of fitness evolution is $O(N \times M)$.
 
 \begin{algorithm}[!h]
   \caption{Fitness Evaluation Algorithm}
