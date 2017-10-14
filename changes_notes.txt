@@ -1,0 +1,112 @@
+Review1：
+-----------------------------------------------------------------------------------------------------
+1)	Q1: Software Project Management Problem is too general. I suggest to clarify the specific
+problem that is solved in this paper in the title and throughout the paper.
+ANS: 
+to specific our problem, we change title from
+"Parallel Evolutionary Algorithm in Solving Single Objective Software Project Management Problem"
+to
+"Parallel Evolutionary Algorithm in Scheduling Work Packages and Minimizing Duration of Software Project Management"
+
+-----------------------------------------------------------------------------------------------------
+2)	Q2: Using GPGPU and parallel programming to optimize algorithms for software engineering
+problems is not new idea. The paper should compare the work presented in this paper with other
+similar works.
+ANS: 
+We have added some related research paper, such as solving some familiar software management
+problems with ant colony algorithm, and also added some general idea in GPU acceleration techniques.
+
+(most papers are provided by second reviewer)
+
+-----------------------------------------------------------------------------------------------------
+3)	Q3: The optimization of evolutionary algorithm actually is independent from specific problems
+(e.g., the project management problems addressed in this paper). More explanations are required to
+better clarify why the optimization of evolutionary algorithm should be explored under the specific
+setting of software project management problems.
+ANS: 
+added following discussion in chapter 2 "evolutionary algorithm":
+"As is known to all, the difficulty of software project management problem is to find the right order
+of the work package under the precondition of satisfying the constraint of the resource. However,
+there are numberless constitute of the work package. Traversal is the easiest approach but it
+requires too much computing resources and results to lower effectiveness. So we need an approach
+which consumes less time with a perfect solution." 
+
+  
+Review2:
+-----------------------------------------------------------------------------------------------------
+1)	Q1: In my opinion, the software management optimization is not only studied in software
+engineering community, but also in other communities like applied soft computing, operation
+research. I think the current related work section is not adequate. Actually, there are plenty of
+studies on software project planning or scheduling optimization, maybe the authors can consider
+citing more papers, such as: 
+
+a. Thomas Kremmel, Jirí Kubalík, Stefan Biffl: Software project portfolio optimization with advanced
+multiobjective evolutionary algorithms. Appl. Soft Comput. 11(1): 1416-1426 (2011)
+b. Jing Xiao, Xian-Ting Ao, Yong Tang: Solving software project scheduling problems with ant colony
+optimization. Computers & OR 40(1): 33-46 (2013)
+
+ANS: 
+This tow papers are very close to my paper's topic,
+The first paper introduced a COCOMO II model to describe sofrware project portfolios and a
+multiobjective evolutionary approach, mPOEMS.
+The second introduce an ant colony optimization approach which is called ACS-SPSP algorithm.
+We have added those works to our Related works.
+first:
+"In 2011, Thomas proposed an approach to describe software project problems with a set of
+multi-objective criteria for portfolio managers using the COCOMO II model and introduce a
+multi-objective evolutionary approach."
+second:
+"In 2013, Jing began solving software project scheduling problems with ant colony optimization."
+
+-----------------------------------------------------------------------------------------------------
+2)	Q2: The parallel EA is not a brand-new technique. Even in SBSE, Guo et al. have successfully
+applied parallel boosted GA to solve a similar SESE problem --- the optimal feature selection
+problem in software product line. Hence, the technical contribution or innovation of the paper is
+not significant. 
+a. Jianmei Guo, Edward Zulkoski, Rafael Olaechea, Derek Rayside, Krzysztof Czarnecki, Sven Apel,
+Joanne M. Atlee: Scaling exact multi-objective combinatorial optimization by parallelization. ASE
+2014: 409-420
+
+ANS: 
+In this paper, five novel parallel algorithms have been proposed to solve multi-objective
+combinatorial optimization. The five algorithms are ParGIA, OS-GIA, OS-ParGIA, FS-GIA and FS-ParGIA,
+which GIA is guided improvement algorithm.
+so we adding following discussion in our paper's Related works.
+"In 2014, Jianmei proposed five novel parallel algorithms for solving 
+multi-objective combinatorial optimization problems exactly and efficient.
+Compared to our work, those algorithms are different in solved questions, but there is the same
+thought of parallelization to gain the faster speed. They apply the algorithm to the case of
+software-system designs and get great solution, which illustrate the great characteristic of
+parallelization in the domain of software engineering."
+
+-----------------------------------------------------------------------------------------------------
+3)	Q3: To the best knowledge of mine, in SBSE, the recent trend is to model the optimization
+problem as a multi-objective problem. For example, for the project management problem, two
+objectives can be considered: to minimize the overall duration of the project and to minimize the
+resources consumed in the project. Currently, the authors just consider the first goal. In future,
+to make the research more practical, the authors may consider some other goals. 
+
+ANS: 
+We adding some future goal in future work and we find the more development goal:
+"as the development of the scale of the software project, there are more than one objectives in the
+problem define. so we will increase the complexity of the model of the software project management
+problem and improved our algorithm to solve multi-objective problem."
+
+-----------------------------------------------------------------------------------------------------
+4)	Q4: The problem statement can be further improved. It is better to clearly state whether the
+constraints of the project management optimization (i.e., work package dependency and the resource
+allocation restriction) are liner or non-linear constraints. Also for the single objective, is it a
+liner or non-linear fitness function? It is a little unclear for me whether EA is the best solution
+for this kind of SBSE problem. Maybe the authors can add some discussion.
+ANS: 
+to let the definition more clear,
+change "corresponding dependencies" to "directed acyclic dependencies". 
+Those constraint is a reduced to a DAG. 
+to make more clear in fitness function's algorithm complexity,
+adding some discussion in Chapter Fitness Evaluation.
+
+add some discussion on fitness function's complexity.
+As we can see from the Algorithm~\ref{alg}, to calculate the overall duration,
+the algorithm must traverse all $N$ work packages and $M$ kinds of resources,
+so the average complexity of fitness evolution is $O(N \times M)$.
+
