@@ -1,0 +1,55 @@
+% !TEX root = ../paper.tex
+% header
+%
+
+\title{Parallel Evolutionary Algorithm in Scheduling Work Packages to Minimize Duration of Software Project Management}
+%Solving Project Management Problem with Parallel Evolutionary Algorithm}
+%
+\titlerunning{Project Management}  % abbreviated title (for running head)
+%                                     also used for the TOC unless
+%                                     \toctitle is used
+%
+\author{
+  Jinghui Hu\inst{1,2} \and
+  Xu Wang\inst{3} \and
+  Jian Ren\inst{3}\thanks{Corresponding author: {J. Ren (renjian@buaa.edu.cn)}} \and
+  Chao Liu\inst{3}
+} 
+%
+\authorrunning{Hu, Wang, Ren, Liu} % abbreviated author list (for running head)
+%
+%%%% list of authors for the TOC (use if author list has to be modified)
+\tocauthor{Jinghui Hu, Xu Wang, Jian Ren, Chao Liu}
+%
+\institute{
+AVIC Manufacturing Technology Institute,\\
+Beijing 100024, China \and
+Aeronautical Key Laboratory for Digital Manufacturing Technology,\\
+Beijing 100024, China \and
+State Key Laboratory of Software Development Environment,\\
+School of Computer Science and Engineering, 
+\\Beihang University, Beijing 100191, China
+%\\
+%\email{\{hujinghui, bhwangxu, renjian, liuchao\}@buaa.edu.cn}
+}
+
+
+
+\maketitle
+
+\begin{abstract}
+\vspace{-6mm}
+Software project management problem mainly includes resources allocation and work packages scheduling.
+This paper presents an approach to Search Based Software Project Management based on parallel implementation of evolutionary algorithm on GPU. 
+We redesigned evolutionary algorithm to cater for the purpose of parallel programming.
+Our approach aims to parallelize the genetic operators including: crossover, mutation and evaluation in the evolution process to achieve faster execution. % time. for the optimization process.
+To evaluate our approach, we conducted a ``proof of concept'' empirical study, using data from three real-world software projects. 
+Both sequential and parallel version of a conventional single objective evolutionary algorithm are implemented. 
+The sequential version  is based on common programming approach using C++, and the parallel version is based on GPGPU programming approach using CUDA.
+%The objective is to minimize the overall duration a software project, while satisfying the dependencies between work packages and constraints of resources allocation in the software project.
+Results indicate that even a relatively cheap graphic card (GeForce GTX 970) can speed up the optimization process significantly.
+We believe that deploy parallel evolutionary algorithm based on GPU  may fit many applications for other software project management problems, since software projects often have complex inter-related work packages and resources, and are typically characterized by large scale problems which optimization process ought to be accelerated by parallelism.
+\vspace{-2mm}
+\keywords{Software project management, Evolutionary algorithm, NVidia CUDA, Parallel computing, GPGPU}
+\vspace{-2mm}
+\end{abstract}
